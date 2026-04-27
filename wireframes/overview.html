@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capital Unique — Capital Without the Constraints of Banks</title>
+  <meta name="description" content="Capital Unique operates where traditional lending ends, connecting borrowers seeking flexible finance with investors looking to deploy capital intelligently.">
+  <link rel="stylesheet" href="../src/shared/wireframe.css">
+</head>
+<body>
+
+<dl class="wf-meta">
+  <div class="wf-meta-row"><dt>Slug:</dt><dd>/overview</dd><dt>Relume folder:</dt><dd>overview/</dd><dt>Status:</dt><dd>Complete (testimonials pending)</dd></div>
+  <div class="wf-meta-row"><dt>Phase:</dt><dd>1 — Wireframe</dd><dt>Source:</dt><dd>relume-source/overview/index.jsx + content/overview.md</dd></div>
+</dl>
+
+<header class="wf-header" data-component="Navbar13" data-partial="navbar" role="banner">
+  <a href="#" aria-label="Capital Unique — home">[Logo: Capital Unique wordmark]</a>
+  <nav aria-label="Primary">
+    <ul class="wf-nav-list">
+      <li>
+        Capital
+        <ul>
+          <li><a href="#">Borrow</a></li>
+          <li><a href="#">Fund</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Waitlist</a></li>
+      <li>
+        Insights &amp; Resources
+        <ul>
+          <li><a href="#">Free Guides</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Calculators</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Charles A.I</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  <ul class="wf-ctas">
+    <li><a href="#">Login</a></li>
+  </ul>
+</header>
+
+<main>
+
+  <section data-component="(no Relume component)" data-status="extra-from-copy" aria-label="Hero">
+    <h1>Capital, without the constraints of banks.</h1>
+    <p>Capital Unique operates where traditional lending ends. We connect borrowers seeking flexible finance with investors looking to deploy capital intelligently—quietly, clearly, and with intent.</p>
+    <p class="wf-note"><strong>Phase 2:</strong> <code>content/overview.md</code> opens with an H1 + lede that has no matching component in <code>overview/index.jsx</code> (the Relume export starts with Logo3). Decide whether to add a Header component (e.g. Header76 like Home) or accept the trust strip as the page opener.</p>
+  </section>
+
+  <section data-component="Logo3" data-partial="logo-strip" aria-label="Trusted by">
+    <h2>Trusted by Australia's most discerning investors</h2>
+    <div data-image="trust-logos" data-aspect="logo-strip">
+      <span class="wf-prompt">Horizontal-scrolling logo strip (~8 logos). Awaiting real partner / publication logos. Until then: keep as placeholder. Tracked in docs/copy-gaps.md.</span>
+    </div>
+  </section>
+
+  <section data-component="Layout239" aria-label="Two pathways">
+    <p><strong>Two pathways</strong></p>
+    <h2>Two pathways. One disciplined approach.</h2>
+    <p>Capital Unique exists at the intersection of borrowers seeking flexible finance and investors seeking structured opportunities. We bridge the gap traditional banking leaves behind.</p>
+
+    <ul class="wf-cards">
+      <li>
+        <div data-image="overview-pathway-borrowers" data-aspect="4:3">
+          <span class="wf-prompt">Editorial photo evoking strategic decision-making for borrowers — architectural site visit, contract review, or considered boardroom moment. Real photography, sophisticated finance aesthetic.</span>
+        </div>
+        <h3>Strategic capital for complex decisions</h3>
+        <p>We work with businesses, developers, and investors who need funding structured around real-world objectives—not standardised lending models.</p>
+      </li>
+      <li>
+        <div data-image="overview-pathway-investors" data-aspect="4:3">
+          <span class="wf-prompt">Editorial photo evoking the deploy-capital pathway — desk with deal documents, considered investor portrait, or quiet office stillness. Real photography.</span>
+        </div>
+        <h3>Deploy capital with structure and control</h3>
+        <p>Capital Unique works with private investors and family offices seeking governed opportunities with clear terms, defined risk, and long-term alignment.</p>
+      </li>
+      <li>
+        <div data-image="overview-pathway-third" data-aspect="4:3">
+          <span class="wf-prompt">Layout239 ships with a third icon card slot. Phase 2: confirm whether to add a third value-prop (e.g. "Capital designed around your strategy" lede) or collapse the grid to two columns.</span>
+        </div>
+        <h3>Capital designed around your strategy</h3>
+        <p>Development deals, acquisitions, and complex strategies require more than standard lending models. We structure capital around your objectives, timelines, and risk profile—so decisions move forward with clarity.</p>
+        <ul class="wf-cards">
+          <li>Speed without compromise</li>
+          <li>Clarity on real terms</li>
+          <li>Finance built around your deal</li>
+        </ul>
+        <p class="wf-note"><strong>Phase 2:</strong> Layout239 only has 3 icon-card slots. <code>content/overview.md</code> contains a separate "Capital designed around your strategy" block plus a "Structured opportunities for serious investors" block — both with bullet lists. Decide whether to (a) collapse them into the third Layout239 card (current treatment), (b) add a Layout1 / Layout10 component to render the investor block separately, or (c) move both blocks under a separate component.</p>
+      </li>
+    </ul>
+    <ul class="wf-ctas">
+      <li><a href="#">Book Quick Call</a></li>
+      <li><a href="#">Charles A.I →</a></li>
+    </ul>
+  </section>
+
+  <section data-component="(no Relume component)" data-status="extra-from-copy" aria-label="Structured opportunities for serious investors">
+    <h2>Structured opportunities for serious investors</h2>
+    <p>Private capital deserves governance that matches its sophistication. We offer transparent structures, managed risk, and partnerships built to last.</p>
+    <ul class="wf-cards">
+      <li>Transparent deal structures</li>
+      <li>Risk-aware partnerships</li>
+      <li>Long-term capital alignment</li>
+    </ul>
+    <p class="wf-note"><strong>Phase 2:</strong> this investor-side block exists in <code>content/overview.md</code> but has no dedicated Relume component in <code>overview/index.jsx</code>. Decide whether to introduce a Layout1 / Layout207-style component (mirror of Get Capital) or fold into the Layout239 grid above.</p>
+  </section>
+
+  <section data-component="Layout353" aria-label="How funding works">
+    <section data-partial="how-funding-works" aria-label="How funding works (reusable 4-step block)">
+      <p><strong>The Process</strong></p>
+      <h2>How funding works</h2>
+      <p>We start by understanding your objectives and assessing the opportunity with care. From there, we structure the right solution and guide the process through to funding with clarity at every stage. The approach is deliberate, transparent, and designed to move forward with confidence.</p>
+      <ul class="wf-ctas">
+        <li><a href="#">Book Quick Chat</a></li>
+        <li><a href="#">Charles A.I →</a></li>
+      </ul>
+      <ol class="wf-cards">
+        <li>
+          <h3>01 &mdash; Understand the deal</h3>
+          <p>We discuss your business objectives, timing, and structure so we can understand what you're trying to achieve.</p>
+        </li>
+        <li>
+          <h3>02 &mdash; Assess options</h3>
+          <p>We review the information and identify the most suitable funding approach based on your needs.</p>
+        </li>
+        <li>
+          <h3>03 &mdash; Confirm terms</h3>
+          <p>We clearly explain the proposed terms, costs, and conditions before anything moves forward.</p>
+        </li>
+        <li>
+          <h3>04 &mdash; Deploy funding</h3>
+          <p>Once agreed, we manage the process through to funding and remain involved as the capital is deployed.</p>
+        </li>
+      </ol>
+    </section>
+  </section>
+
+  <section data-component="Gallery24" data-status="awaiting-content" aria-label="Our work">
+    <h2>Our work</h2>
+    <p>Projects we've funded across Australia.</p>
+    <ul class="wf-cards">
+      <li>
+        <div data-image="overview-project-1" data-aspect="4:3">
+          <span class="wf-prompt">Horizontal-scrolling project gallery (3+ tiles). Real project photography pending — completed builds, sites, or representative property/business imagery. Tracked in docs/copy-gaps.md.</span>
+        </div>
+      </li>
+      <li>
+        <div data-image="overview-project-2" data-aspect="4:3">
+          <span class="wf-prompt">Project tile 2 — awaiting real project photography.</span>
+        </div>
+      </li>
+      <li>
+        <div data-image="overview-project-3" data-aspect="4:3">
+          <span class="wf-prompt">Project tile 3 — awaiting real project photography.</span>
+        </div>
+      </li>
+    </ul>
+    <p class="wf-note"><strong>Phase 2:</strong> Gallery24 appears in the Relume export but <code>content/overview.md</code> has no "Our work" copy block. Either add a project-list section to the markdown or remove the component. Currently flagged awaiting-content.</p>
+  </section>
+
+  <section data-component="Testimonial33" data-status="awaiting-content" aria-label="What clients say">
+    <h2>What clients say</h2>
+    <p>Those who've worked with us speak to the difference clarity and speed make.</p>
+    <ul class="wf-ctas">
+      <li><a href="#">Read more</a></li>
+      <li><a href="#">View →</a></li>
+    </ul>
+    <section data-partial="testimonial" data-status="awaiting-content" aria-label="Testimonial cards (placeholder)">
+      <p>[Testimonials — content pending. Need 2–4 short quotes with name + role + company. Tracked in docs/copy-gaps.md.]</p>
+      <ul class="wf-cards">
+        <li>
+          <blockquote>"[Quote 1 — pending]"</blockquote>
+          <p>[Name], [Role], [Company]</p>
+        </li>
+        <li>
+          <blockquote>"[Quote 2 — pending]"</blockquote>
+          <p>[Name], [Role], [Company]</p>
+        </li>
+      </ul>
+    </section>
+    <p class="wf-note"><strong>Phase 2:</strong> Testimonial33 appears in Relume export but <code>content/overview.md</code> has no "What clients say" block. Inherited copy from home.md as placeholder.</p>
+  </section>
+
+</main>
+
+<footer class="wf-footer" data-component="Footer10" data-partial="footer" role="contentinfo">
+  <a href="#" aria-label="Capital Unique — home">[Logo: Capital Unique wordmark]</a>
+  <div class="wf-footer-cols">
+    <div>
+      <h3>Capital</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">Borrow Capital</a></li>
+        <li><a href="#">Fund Capital</a></li>
+        <li><a href="#">Subscribe</a></li>
+        <li><a href="#">Account Login</a></li>
+        <li><a href="#">Waitlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Insights &amp; Resources</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Calculators</a></li>
+        <li><a href="#">Charles A.I</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Connect</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Join Investors Network</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Stay informed</h3>
+      <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+      <form>
+        <label for="footer-email">Email</label>
+        <input id="footer-email" type="email" placeholder="Your email address" disabled>
+        <button type="submit" disabled>Join</button>
+      </form>
+      <p><small>By subscribing you agree to our Privacy Policy.</small></p>
+    </div>
+  </div>
+  <hr>
+  <p><small>© [Year] Capital Unique. All rights reserved.</small></p>
+  <ul class="wf-nav-list" aria-label="Social">
+    <li><a href="#">Facebook</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">X (Twitter)</a></li>
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">YouTube</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
