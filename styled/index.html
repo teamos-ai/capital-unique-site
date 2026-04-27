@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Styled Pages Index — Capital Unique (Phase 3 review)</title>
+  <meta name="description" content="Phase 3 review hub. 17 styled pages built off Direction B 'The Vault'.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+
+  <style>
+    body { background: var(--bg-dark); color: var(--fg-on-dark); }
+
+    .index-hero {
+      padding-block: var(--space-16) var(--space-12);
+      text-align: center;
+      border-bottom: 1px solid oklch(28% 0.01 60);
+    }
+    .index-hero .eyebrow { color: var(--accent); display: inline-block; margin-bottom: var(--space-3); }
+    .index-hero h1 {
+      font-family: var(--font-display); font-weight: var(--fw-black);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.05; letter-spacing: -0.02em;
+      margin-block: 0 var(--space-4);
+    }
+    .index-hero p {
+      max-width: 60ch; margin: 0 auto var(--space-6);
+      color: var(--fg-on-dark-muted); font-size: var(--text-md);
+    }
+    .index-hero .links {
+      display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;
+      font-size: var(--text-sm);
+    }
+    .index-hero .links a {
+      padding: var(--space-2) var(--space-4);
+      border: 1px solid oklch(45% 0.10 55 / 0.4);
+      border-radius: var(--radius-md);
+      color: var(--fg-on-dark);
+      text-decoration: none;
+      transition: background var(--duration-base) var(--easing-standard);
+    }
+    .index-hero .links a:hover { background: oklch(20% 0.05 50 / 0.4); color: var(--accent); }
+
+    .index-grid {
+      display: grid; gap: var(--space-5);
+      grid-template-columns: 1fr;
+      padding-block: var(--space-12);
+    }
+    @media (min-width: 768px) { .index-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .index-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .index-card {
+      position: relative;
+      background: linear-gradient(180deg, oklch(20% 0.008 60), oklch(13% 0.005 60));
+      border: 1px solid oklch(28% 0.01 60);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      display: flex; flex-direction: column; gap: var(--space-3);
+      transition: transform var(--duration-base) var(--easing-standard), border-color var(--duration-base) var(--easing-standard), box-shadow var(--duration-base) var(--easing-standard);
+      text-decoration: none; color: inherit;
+    }
+    .index-card::before {
+      content: ""; position: absolute; inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, oklch(60% 0.16 55 / 0.5), transparent);
+      opacity: 0.4; transition: opacity var(--duration-base) var(--easing-standard);
+    }
+    .index-card:hover {
+      transform: translateY(-2px);
+      border-color: oklch(45% 0.10 55 / 0.55);
+      box-shadow: 0 18px 48px oklch(0% 0 0 / 0.5), 0 0 60px oklch(50% 0.13 55 / 0.15);
+    }
+    .index-card:hover::before { opacity: 1; }
+
+    .index-card__num {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: var(--text-xs); color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+    .index-card__title {
+      font-family: var(--font-display); font-weight: var(--fw-bold);
+      font-size: var(--text-xl); margin: 0;
+      color: var(--fg-on-dark);
+    }
+    .index-card__slug {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: var(--text-xs); color: var(--fg-on-dark-muted);
+    }
+    .index-card__pills { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: auto; padding-top: var(--space-3); }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+    }
+    .pill--ok { color: oklch(70% 0.18 145); }
+    .pill--warn { color: var(--accent); }
+    .pill--gap { color: oklch(70% 0.20 25); }
+    .pill--info { color: var(--color-ship-cove); }
+
+    .legend {
+      max-width: 720px; margin: 0 auto;
+      padding: var(--space-5) var(--space-6);
+      background: oklch(13% 0.005 60);
+      border: 1px solid oklch(28% 0.01 60);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm); color: var(--fg-on-dark-muted);
+      display: flex; flex-wrap: wrap; gap: var(--space-4);
+      justify-content: center;
+    }
+    .legend span { display: inline-flex; align-items: center; gap: var(--space-2); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <section class="index-hero">
+      <span class="eyebrow">Phase 3 review</span>
+      <h1>17 styled pages · <span class="hl">The Vault</span></h1>
+      <p>Direction B applied across every page. Built from <code style="color: var(--accent);">src/templates/</code> via <code style="color: var(--accent);">scripts/build-page.mjs</code> with the 6 partials inlined. Click any card to open. Look for visual consistency, section rhythm, bronze-accent restraint, photography placement, and any awaiting-content slots that read awkwardly.</p>
+      <div class="links">
+        <a href="../docs/design-system-preview.html">Design system preview</a>
+        <a href="../docs/brand-spec.md">Brand spec</a>
+        <a href="../docs/copy-gaps.md">Copy gaps</a>
+        <a href="../docs/direction-b.html">Direction B reference demo</a>
+      </div>
+    </section>
+
+    <section class="legend" aria-label="Status pill legend">
+      <span><span class="pill pill--ok">complete</span> ready to ship</span>
+      <span><span class="pill pill--warn">awaiting-content</span> swap-in pending</span>
+      <span><span class="pill pill--gap">copy-gap</span> placeholder copy</span>
+      <span><span class="pill pill--info">no-copy</span> entire page pending</span>
+    </section>
+
+    <div class="index-grid" role="list">
+      <a class="index-card" href="home.html" role="listitem">
+        <span class="index-card__num">01</span>
+        <h2 class="index-card__title">Home</h2>
+        <span class="index-card__slug">/</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">testimonials</span></div>
+      </a>
+      <a class="index-card" href="overview.html" role="listitem">
+        <span class="index-card__num">02</span>
+        <h2 class="index-card__title">Overview</h2>
+        <span class="index-card__slug">/overview</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">testimonials</span><span class="pill pill--warn">project gallery</span></div>
+      </a>
+      <a class="index-card" href="about.html" role="listitem">
+        <span class="index-card__num">03</span>
+        <h2 class="index-card__title">About</h2>
+        <span class="index-card__slug">/about</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">testimonials</span></div>
+      </a>
+      <a class="index-card" href="how-it-works.html" role="listitem">
+        <span class="index-card__num">04</span>
+        <h2 class="index-card__title">How it works</h2>
+        <span class="index-card__slug">/how-it-works</span>
+        <div class="index-card__pills"><span class="pill pill--gap">placeholder hero (intentional)</span></div>
+      </a>
+      <a class="index-card" href="get-capital.html" role="listitem">
+        <span class="index-card__num">05</span>
+        <h2 class="index-card__title">Get capital</h2>
+        <span class="index-card__slug">/get-capital</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">testimonials</span><span class="pill pill--warn">project gallery</span></div>
+      </a>
+      <a class="index-card" href="business.html" role="listitem">
+        <span class="index-card__num">06</span>
+        <h2 class="index-card__title">Business</h2>
+        <span class="index-card__slug">/business</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span></div>
+      </a>
+      <a class="index-card" href="commercial.html" role="listitem">
+        <span class="index-card__num">07</span>
+        <h2 class="index-card__title">Commercial</h2>
+        <span class="index-card__slug">/commercial</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">5 tab bodies pending</span></div>
+      </a>
+      <a class="index-card" href="construction.html" role="listitem">
+        <span class="index-card__num">08</span>
+        <h2 class="index-card__title">Construction</h2>
+        <span class="index-card__slug">/construction</span>
+        <div class="index-card__pills"><span class="pill pill--gap">agriculture-bleed copy</span></div>
+      </a>
+      <a class="index-card" href="agriculture.html" role="listitem">
+        <span class="index-card__num">09</span>
+        <h2 class="index-card__title">Agriculture</h2>
+        <span class="index-card__slug">/agriculture</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">"structured around" bullets pending</span></div>
+      </a>
+      <a class="index-card" href="property-development.html" role="listitem">
+        <span class="index-card__num">10</span>
+        <h2 class="index-card__title">Property development</h2>
+        <span class="index-card__slug">/property-development</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span><span class="pill pill--warn">project gallery</span></div>
+      </a>
+      <a class="index-card" href="private-capital.html" role="listitem">
+        <span class="index-card__num">11</span>
+        <h2 class="index-card__title">Private capital</h2>
+        <span class="index-card__slug">/private-capital</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span></div>
+      </a>
+      <a class="index-card" href="charles-ai.html" role="listitem">
+        <span class="index-card__num">12</span>
+        <h2 class="index-card__title">Charles A.I</h2>
+        <span class="index-card__slug">/charles-ai</span>
+        <div class="index-card__pills"><span class="pill pill--ok">complete</span></div>
+      </a>
+      <a class="index-card" href="calculators.html" role="listitem">
+        <span class="index-card__num">13</span>
+        <h2 class="index-card__title">Calculators</h2>
+        <span class="index-card__slug">/calculators</span>
+        <div class="index-card__pills"><span class="pill pill--ok">copy ok</span><span class="pill pill--warn">interactive logic TBD</span></div>
+      </a>
+      <a class="index-card" href="guides.html" role="listitem">
+        <span class="index-card__num">14</span>
+        <h2 class="index-card__title">Guides</h2>
+        <span class="index-card__slug">/guides</span>
+        <div class="index-card__pills"><span class="pill pill--ok">copy ok</span><span class="pill pill--warn">PDF assets TBD</span></div>
+      </a>
+      <a class="index-card" href="articles.html" role="listitem">
+        <span class="index-card__num">15</span>
+        <h2 class="index-card__title">Articles</h2>
+        <span class="index-card__slug">/articles</span>
+        <div class="index-card__pills"><span class="pill pill--warn">index only — bodies in GHL blog</span></div>
+      </a>
+      <a class="index-card" href="insights-and-resources.html" role="listitem">
+        <span class="index-card__num">16</span>
+        <h2 class="index-card__title">Insights &amp; Resources</h2>
+        <span class="index-card__slug">/insights-and-resources</span>
+        <div class="index-card__pills"><span class="pill pill--ok">hub copy ok</span><span class="pill pill--warn">downstream content TBD</span></div>
+      </a>
+      <a class="index-card" href="contact.html" role="listitem">
+        <span class="index-card__num">17</span>
+        <h2 class="index-card__title">Contact</h2>
+        <span class="index-card__slug">/contact</span>
+        <div class="index-card__pills"><span class="pill pill--info">no copy supplied</span></div>
+      </a>
+    </div>
+
+    <p style="text-align: center; padding: var(--space-12) 0; color: var(--fg-on-dark-muted); font-size: var(--text-sm);">
+      <strong style="color: var(--fg-on-dark);">Phase 3 complete.</strong> Tagged <code style="color: var(--accent);">styled-v1</code>. Phase 4 next: image generation.
+    </p>
+  </div>
+
+</body>
+</html>
