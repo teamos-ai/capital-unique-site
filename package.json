@@ -1,0 +1,17 @@
+{
+  "name": "capital-unique-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Capital Unique — non-bank lender static site. Built from a Relume export, packaged for GHL Custom HTML Pages.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "node scripts/build-page.mjs --all",
+    "build:home": "node scripts/build-page.mjs src/templates/home.html styled/home.html",
+    "optimise": "node scripts/optimise-images.mjs",
+    "package:dist": "node scripts/package-dist.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.34.0"
+  }
+}
