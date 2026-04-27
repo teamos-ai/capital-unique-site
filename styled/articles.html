@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articles — Capital Unique</title>
+  <meta name="description" content="Thoughtful perspectives on private finance, non-bank lending, and capital strategy—written to help you understand your options and make informed decisions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__brand" aria-label="Capital Unique — home">
+      <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+      <span>capital unique</span>
+    </a>
+    <nav class="navbar__nav" aria-label="Primary">
+      <a href="/get-capital">Capital ▾</a>
+      <a href="/get-capital#waitlist">Waitlist</a>
+      <a href="/insights-and-resources">Insights &amp; Resources ▾</a>
+      <a href="/charles-ai">Charles A.I</a>
+      <a href="/about">About</a>
+    </nav>
+    <a href="#login" class="navbar__cta">Login</a>
+  </div>
+</header>
+
+
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="container hero-vault__inner" style="padding-block: clamp(96px, 14vw, 180px);">
+      <span class="hero-vault__eyebrow">Articles</span>
+      <h1 id="hero-heading">Clear Thinking for <span class="hl">Unique</span> Capital.</h1>
+      <p class="hero-vault__lead">Thoughtful perspectives on private finance, non-bank lending, and capital strategy—written to help you understand your options and make informed decisions.</p>
+      <div class="hero-vault__ctas">
+        <a href="#latest" class="btn btn--primary">Latest articles</a>
+        <a href="#subscribe" class="btn btn--secondary">Subscribe</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-labelledby="trust-heading">
+  <div class="container">
+    <h2 id="trust-heading" class="trust__heading">Trusted by Australia's most discerning investors</h2>
+    <div class="trust__logos" role="list">
+      <span class="trust__logo" role="listitem">[Logo 1]</span>
+      <span class="trust__logo" role="listitem">[Logo 2]</span>
+      <span class="trust__logo" role="listitem">[Logo 3]</span>
+      <span class="trust__logo" role="listitem">[Logo 4]</span>
+      <span class="trust__logo" role="listitem">[Logo 5]</span>
+      <span class="trust__logo" role="listitem">[Logo 6]</span>
+    </div>
+  </div>
+</section>
+
+
+  <section class="approach-vault" id="latest" aria-labelledby="latest-heading">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Thoughts on capital</span>
+        <h2 id="latest-heading">Clear perspectives on private finance and <span class="hl">complex</span> lending scenarios</h2>
+        <p>Stay informed on private finance.</p>
+      </div>
+      <div class="approach-vault__grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); grid-template-areas: none;">
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Empty_Desk.jpeg" alt=""></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Non-conforming</span>
+            <h3>When banks say no, <span class="hl">alternatives</span> emerge</h3>
+            <p>Understanding non-conforming lending and when it makes sense.</p>
+            <a href="#article-1" class="btn btn--link">Read</a>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Meeting_BoardRoom.png" alt=""></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Development</span>
+            <h3>Structuring capital for <span class="hl">development</span> projects</h3>
+            <p>How developers navigate complex financing across multiple stages.</p>
+            <a href="#article-2" class="btn btn--link">Read</a>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Headshot_Tan_Golden.jpeg" alt=""></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Investors</span>
+            <h3>Private capital and <span class="hl">portfolio</span> diversification</h3>
+            <p>Why sophisticated investors consider structured lending opportunities.</p>
+            <a href="#article-3" class="btn btn--link">Read</a>
+          </div>
+        </article>
+      </div>
+      <p class="pending-strip" style="margin-top: var(--space-6);">
+        <strong>Awaiting content:</strong> Article bodies will be authored in GHL's blog system. Index titles only for now. (Tracked in <code>docs/copy-gaps.md</code>.)
+      </p>
+    </div>
+  </section>
+
+  <section class="approach-vault" id="subscribe" aria-labelledby="subscribe-heading" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="approach-vault__head" style="max-width: 720px;">
+        <span class="eyebrow">Newsletter</span>
+        <h2 id="subscribe-heading">Receive new writing as it's <span class="hl">published</span></h2>
+        <p>Calm, considered perspective on private finance — delivered occasionally, never aggressively.</p>
+      </div>
+      <div style="max-width: 480px; margin: var(--space-6) auto 0;">
+        <form action="#subscribe" method="post" onsubmit="event.preventDefault();" style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <label class="sr-only" for="article-email">Email address</label>
+          <input id="article-email" type="email" placeholder="Your email address" required style="flex: 1; padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid oklch(30% 0.005 60); background: oklch(13% 0.005 60); color: var(--fg-on-dark); font-family: var(--font-body); font-size: var(--text-base); min-height: 44px;">
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="/" class="footer__brand" aria-label="Capital Unique — home">
+        <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+        <span>capital unique</span>
+      </a>
+      <div class="footer__col">
+        <h4>Capital</h4>
+        <ul>
+          <li><a href="/get-capital">Borrow Capital</a></li>
+          <li><a href="/private-capital">Fund Capital</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#login">Account Login</a></li>
+          <li><a href="#waitlist">Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Insights &amp; Resources</h4>
+        <ul>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/insights-and-resources">Resources</a></li>
+          <li><a href="/calculators">Calculators</a></li>
+          <li><a href="/charles-ai">Charles A.I</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/private-capital">Join Investors Network</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__subscribe">
+        <h4>Connect</h4>
+        <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+        <form action="#" method="post" onsubmit="event.preventDefault();">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--primary">Join</button>
+        </form>
+        <small>By subscribing you agree to our <a href="#privacy">Privacy Policy</a>.</small>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Capital Unique. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="#privacy">Privacy policy</a>
+        <a href="#terms">Terms and conditions</a>
+        <a href="#cookies">Cookie settings</a>
+      </div>
+      <div class="footer__social" aria-label="Social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">○</a>
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Capital Unique</title>
+  <meta name="description" content="Speak with Capital Unique. Send your scenario and we'll be in touch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+
+  <style>
+    /* Contact form — dark surface, clear labels, large hit areas */
+    .contact-form {
+      background: oklch(13% 0.005 60);
+      border: 1px solid oklch(28% 0.01 60);
+      border-radius: var(--radius-lg);
+      padding: var(--space-12);
+      display: grid; gap: var(--space-5);
+    }
+    .contact-form .field { display: flex; flex-direction: column; gap: var(--space-2); }
+    .contact-form .field--row { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+    @media (min-width: 768px) { .contact-form .field--row { grid-template-columns: 1fr 1fr; } }
+    .contact-form label {
+      font-family: var(--font-body); font-weight: var(--fw-semibold);
+      font-size: var(--text-sm); color: var(--fg-on-dark);
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md);
+      border: 1px solid oklch(30% 0.005 60);
+      background: oklch(10% 0.005 60); color: var(--fg-on-dark);
+      font-family: var(--font-body); font-size: var(--text-base);
+      min-height: 44px;
+      transition: border-color var(--duration-base) var(--easing-standard);
+    }
+    .contact-form textarea { min-height: 140px; resize: vertical; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--fg-on-dark-muted); }
+    .contact-form input:focus-visible,
+    .contact-form select:focus-visible,
+    .contact-form textarea:focus-visible {
+      outline: 2px solid var(--focus-ring); outline-offset: 2px;
+      border-color: oklch(50% 0.13 55 / 0.6);
+    }
+    .contact-form .radio-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-3); }
+    .contact-form .radio-group label {
+      display: flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid oklch(30% 0.005 60);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-weight: var(--fw-regular);
+      transition: border-color var(--duration-base) var(--easing-standard), background var(--duration-base) var(--easing-standard);
+    }
+    .contact-form .radio-group label:has(input:checked) {
+      border-color: var(--accent);
+      background: oklch(20% 0.05 50 / 0.4);
+    }
+    .contact-form .checkbox { display: flex; gap: var(--space-3); align-items: flex-start; font-weight: var(--fw-regular); font-size: var(--text-sm); color: var(--fg-on-dark-muted); }
+
+    .contact-channels { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-5); }
+    .contact-channel {
+      background: oklch(13% 0.005 60);
+      border: 1px solid oklch(28% 0.01 60);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      text-align: center;
+    }
+    .contact-channel h3 {
+      font-family: var(--font-display); font-weight: var(--fw-bold);
+      font-size: var(--text-md); margin: var(--space-3) 0 var(--space-2);
+      color: var(--fg-on-dark);
+    }
+    .contact-channel p { font-size: var(--text-sm); color: var(--fg-on-dark-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__brand" aria-label="Capital Unique — home">
+      <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+      <span>capital unique</span>
+    </a>
+    <nav class="navbar__nav" aria-label="Primary">
+      <a href="/get-capital">Capital ▾</a>
+      <a href="/get-capital#waitlist">Waitlist</a>
+      <a href="/insights-and-resources">Insights &amp; Resources ▾</a>
+      <a href="/charles-ai">Charles A.I</a>
+      <a href="/about">About</a>
+    </nav>
+    <a href="#login" class="navbar__cta">Login</a>
+  </div>
+</header>
+
+
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="container hero-vault__inner" style="padding-block: clamp(80px, 12vw, 140px);">
+      <span class="hero-vault__eyebrow">Contact</span>
+      <h1 id="hero-heading">Send your <span class="hl">scenario</span></h1>
+      <p class="hero-vault__lead">[Hero copy pending — send your scenario and we'll be in touch within one business day.]</p>
+    </div>
+  </section>
+
+  <!-- Contact form -->
+  <section class="approach-vault" aria-labelledby="form-heading" style="background: var(--bg-dark-alt);">
+    <div class="container" style="max-width: 840px;">
+      <div class="approach-vault__head" style="text-align: left; max-width: none;">
+        <span class="eyebrow">Get in touch</span>
+        <h2 id="form-heading">Tell us about your <span class="hl">scenario</span></h2>
+        <p>The more context you provide, the faster we can respond with a useful answer.</p>
+      </div>
+
+      <form class="contact-form" action="#submit" method="post" onsubmit="event.preventDefault();" aria-label="Contact form">
+        <div class="field--row">
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" type="text" name="name" placeholder="Full name" required>
+          </div>
+          <div class="field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" type="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="field--row">
+          <div class="field">
+            <label for="contact-phone">Phone</label>
+            <input id="contact-phone" type="tel" name="phone" placeholder="0400 000 000">
+          </div>
+          <div class="field">
+            <label for="contact-state">State</label>
+            <select id="contact-state" name="state">
+              <option value="">Select…</option>
+              <option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option>
+              <option>SA</option><option>TAS</option><option>ACT</option><option>NT</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="field" style="border: 0; padding: 0; margin: 0;">
+          <legend style="font-family: var(--font-body); font-weight: var(--fw-semibold); font-size: var(--text-sm); color: var(--fg-on-dark); margin-bottom: var(--space-3);">What do you need help with?</legend>
+          <div class="radio-group">
+            <label><input type="radio" name="intent" value="borrow"> Borrow capital</label>
+            <label><input type="radio" name="intent" value="fund"> Deploy capital</label>
+            <label><input type="radio" name="intent" value="property"> Property finance</label>
+            <label><input type="radio" name="intent" value="business"> Business finance</label>
+            <label><input type="radio" name="intent" value="agriculture"> Agricultural finance</label>
+            <label><input type="radio" name="intent" value="other"> Something else</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="contact-scenario">Your scenario</label>
+          <textarea id="contact-scenario" name="scenario" placeholder="Briefly describe your situation, timing, and what capital needs to achieve."></textarea>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" name="consent" required>
+          <span>I agree to be contacted by Capital Unique about this enquiry. <a href="#privacy" style="color: var(--accent);">Privacy Policy</a>.</span>
+        </label>
+
+        <button type="submit" class="btn btn--primary" style="justify-self: start;">Send enquiry</button>
+
+        <p class="pending-strip" style="margin: 0;">
+          <strong>Awaiting content:</strong> form fields, dropdown options, radio intents, validation copy, success/error messaging, submission target (email / CRM / both) all pending. (No <code>content/contact.md</code> supplied.)
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Other channels -->
+  <section class="approach-vault" aria-labelledby="channels-heading">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Other channels</span>
+        <h2 id="channels-heading">Reach us <span class="hl">directly</span></h2>
+      </div>
+      <div class="contact-channels">
+        <article class="contact-channel">
+          <span class="vcard__eyebrow">Email</span>
+          <h3>[email pending]</h3>
+          <p>One business day response.</p>
+        </article>
+        <article class="contact-channel">
+          <span class="vcard__eyebrow">Phone</span>
+          <h3>[phone pending]</h3>
+          <p>Mon–Fri 9–5 AEST.</p>
+        </article>
+        <article class="contact-channel">
+          <span class="vcard__eyebrow">Office</span>
+          <h3>[office pending]</h3>
+          <p>By appointment only.</p>
+        </article>
+        <article class="contact-channel">
+          <span class="vcard__eyebrow">Charles A.I</span>
+          <h3>Map your scenario first</h3>
+          <p><a href="/charles-ai" style="color: var(--accent);">Use Charles A.I →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="/" class="footer__brand" aria-label="Capital Unique — home">
+        <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+        <span>capital unique</span>
+      </a>
+      <div class="footer__col">
+        <h4>Capital</h4>
+        <ul>
+          <li><a href="/get-capital">Borrow Capital</a></li>
+          <li><a href="/private-capital">Fund Capital</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#login">Account Login</a></li>
+          <li><a href="#waitlist">Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Insights &amp; Resources</h4>
+        <ul>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/insights-and-resources">Resources</a></li>
+          <li><a href="/calculators">Calculators</a></li>
+          <li><a href="/charles-ai">Charles A.I</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/private-capital">Join Investors Network</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__subscribe">
+        <h4>Connect</h4>
+        <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+        <form action="#" method="post" onsubmit="event.preventDefault();">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--primary">Join</button>
+        </form>
+        <small>By subscribing you agree to our <a href="#privacy">Privacy Policy</a>.</small>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Capital Unique. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="#privacy">Privacy policy</a>
+        <a href="#terms">Terms and conditions</a>
+        <a href="#cookies">Cookie settings</a>
+      </div>
+      <div class="footer__social" aria-label="Social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">○</a>
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

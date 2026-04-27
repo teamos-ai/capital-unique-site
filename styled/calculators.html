@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculators — Capital Unique</title>
+  <meta name="description" content="Calculators designed for clarity. Each tool is built to help you understand the mechanics of your financial scenario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+</head>
+<body>
+
+  <header class="navbar">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__brand" aria-label="Capital Unique — home">
+      <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+      <span>capital unique</span>
+    </a>
+    <nav class="navbar__nav" aria-label="Primary">
+      <a href="/get-capital">Capital ▾</a>
+      <a href="/get-capital#waitlist">Waitlist</a>
+      <a href="/insights-and-resources">Insights &amp; Resources ▾</a>
+      <a href="/charles-ai">Charles A.I</a>
+      <a href="/about">About</a>
+    </nav>
+    <a href="#login" class="navbar__cta">Login</a>
+  </div>
+</header>
+
+
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="container hero-vault__inner" style="padding-block: clamp(96px, 14vw, 180px);">
+      <span class="hero-vault__eyebrow">Calculators</span>
+      <h1 id="hero-heading">Calculators designed for <span class="hl">clarity</span></h1>
+      <p class="hero-vault__lead">Each tool is built to help you understand the mechanics of your financial scenario. Work through the numbers at your own pace.</p>
+      <div class="hero-vault__ctas">
+        <a href="#tools" class="btn btn--primary">Browse calculators</a>
+        <a href="/charles-ai" class="btn btn--secondary">Charles A.I</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-vault" id="tools" aria-labelledby="tools-heading">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">5 tools</span>
+        <h2 id="tools-heading">Practical models for <span class="hl">disciplined</span> thinking</h2>
+        <p>Each calculator clarifies a specific decision. None replace advice — they prepare you to have a sharper conversation.</p>
+      </div>
+      <div class="approach-vault__grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); grid-template-areas: none;">
+        <article class="vcard vcard--icon">
+          <span class="vcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg></span>
+          <span class="vcard__eyebrow">Borrowing capacity</span>
+          <h3>Understand your true <span class="hl">capacity</span></h3>
+          <p>Get a realistic view of what may be possible outside traditional banks, based on assets, structure, and timing—not rigid formulas. This helps you assess feasibility before progressing further.</p>
+          <a href="#calc-borrowing" class="btn btn--secondary">Open calculator</a>
+        </article>
+        <article class="vcard vcard--icon">
+          <span class="vcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3v18M5 5l14 14"/></svg></span>
+          <span class="vcard__eyebrow">Bridging finance</span>
+          <h3>The real cost of <span class="hl">speed</span></h3>
+          <p>Explore the true cost of short-term and bridging finance across different timeframes. Designed to help you decide whether speed creates advantage—or unnecessary pressure.</p>
+          <a href="#calc-bridging" class="btn btn--secondary">Open calculator</a>
+        </article>
+        <article class="vcard vcard--icon">
+          <span class="vcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13M9 21v-8h6v8"/></svg></span>
+          <span class="vcard__eyebrow">Development feasibility</span>
+          <h3>Pressure-test your <span class="hl">project</span></h3>
+          <p>Run a high-level feasibility check to understand funding balance, equity contribution, and margin sensitivity. Ideal for early-stage clarity before deeper assessment.</p>
+          <a href="#calc-development" class="btn btn--secondary">Open calculator</a>
+        </article>
+        <article class="vcard vcard--icon">
+          <span class="vcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1v22M5 5l14 14M19 5L5 19M1 12h22"/></svg></span>
+          <span class="vcard__eyebrow">Equity release</span>
+          <h3>Unlock capital <span class="hl">strategically</span></h3>
+          <p>See how much equity may be accessible under non-bank structures and what that means for risk and leverage. Built to support thoughtful capital planning, not overextension.</p>
+          <a href="#calc-equity" class="btn btn--secondary">Open calculator</a>
+        </article>
+        <article class="vcard vcard--icon">
+          <span class="vcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span>
+          <span class="vcard__eyebrow">Risk vs return</span>
+          <h3>Balance risk and <span class="hl">return</span></h3>
+          <p>Compare lending scenarios across different risk and yield profiles to understand trade-offs clearly. Designed for disciplined investors who prioritise structure over headline returns.</p>
+          <a href="#calc-risk" class="btn btn--secondary">Open calculator</a>
+        </article>
+      </div>
+      <p class="pending-strip" style="margin-top: var(--space-8);">
+        <strong>Awaiting content:</strong> Interactive calculator logic for all 5 tools is pending. Confirm whether each gets its own page (e.g. <code>/calculators/borrowing-capacity</code>) or opens inline.
+      </p>
+    </div>
+  </section>
+
+  <section class="final-vault" aria-labelledby="cta-charles-heading">
+  <div class="container">
+    <div class="final-vault__inner">
+      <span class="final-vault__eyebrow">Start with clarity</span>
+      <h2 id="cta-charles-heading">Speak with <span class="hl">Charles A.I</span></h2>
+      <p>Get a clear read on your scenario in minutes. Charles asks the right questions, structures your context, and prepares the conversation before our team even joins.</p>
+      <div class="final-vault__ctas">
+        <a href="/charles-ai" class="btn btn--primary">Use Charles A.I</a>
+        <a href="#book-chat" class="btn btn--secondary">Book a call</a>
+      </div>
+    </div>
+  </div>
+  <div class="final-vault__hero" aria-hidden="true">
+    <img src="../../Image%20Assets/John_Capital%20Unique_Footer_Pressure.jpeg" alt="" loading="lazy">
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="/" class="footer__brand" aria-label="Capital Unique — home">
+        <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+        <span>capital unique</span>
+      </a>
+      <div class="footer__col">
+        <h4>Capital</h4>
+        <ul>
+          <li><a href="/get-capital">Borrow Capital</a></li>
+          <li><a href="/private-capital">Fund Capital</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#login">Account Login</a></li>
+          <li><a href="#waitlist">Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Insights &amp; Resources</h4>
+        <ul>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/insights-and-resources">Resources</a></li>
+          <li><a href="/calculators">Calculators</a></li>
+          <li><a href="/charles-ai">Charles A.I</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/private-capital">Join Investors Network</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__subscribe">
+        <h4>Connect</h4>
+        <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+        <form action="#" method="post" onsubmit="event.preventDefault();">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--primary">Join</button>
+        </form>
+        <small>By subscribing you agree to our <a href="#privacy">Privacy Policy</a>.</small>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Capital Unique. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="#privacy">Privacy policy</a>
+        <a href="#terms">Terms and conditions</a>
+        <a href="#cookies">Cookie settings</a>
+      </div>
+      <div class="footer__social" aria-label="Social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">○</a>
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

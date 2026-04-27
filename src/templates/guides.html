@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guides — Capital Unique</title>
+  <meta name="description" content="Straightforward frameworks designed to help you understand structure, risk, and decision-making in non-standard capital scenarios.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+
+  <style>
+    /* FAQ — semantic <details> with subtle hover/focus state */
+    .faq { display: flex; flex-direction: column; gap: var(--space-3); max-width: 720px; margin: 0 auto; }
+    .faq details {
+      background: oklch(13% 0.005 60);
+      border: 1px solid oklch(28% 0.01 60);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-6);
+      transition: border-color var(--duration-base) var(--easing-standard);
+    }
+    .faq details:hover { border-color: oklch(45% 0.10 55 / 0.4); }
+    .faq summary {
+      font-family: var(--font-display); font-weight: var(--fw-bold);
+      font-size: var(--text-md); color: var(--fg-on-dark);
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+"; font-weight: var(--fw-regular); color: var(--accent);
+      font-size: var(--text-xl); line-height: 1;
+      transition: transform var(--duration-base) var(--easing-standard);
+    }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details > p { margin-top: var(--space-4); color: var(--fg-on-dark-muted); line-height: 1.55; }
+  </style>
+</head>
+<body>
+
+  {{> navbar}}
+
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="container hero-vault__inner" style="padding-block: clamp(96px, 14vw, 180px);">
+      <span class="hero-vault__eyebrow">Guides</span>
+      <h1 id="hero-heading">Get the <span class="hl">fundamentals</span></h1>
+      <p class="hero-vault__lead">Straightforward frameworks designed to help you understand structure, risk, and decision-making in non-standard capital scenarios.</p>
+      <div class="hero-vault__ctas">
+        <a href="#featured" class="btn btn--primary">Featured guides</a>
+        <a href="#library" class="btn btn--secondary">Subscribe to library</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-vault" id="featured" aria-labelledby="featured-heading">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Featured guides</span>
+        <h2 id="featured-heading">Three guides to <span class="hl">start</span> with</h2>
+      </div>
+      <div class="approach-vault__grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); grid-template-areas: none;">
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Calculator.jpeg" alt=""></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Cost</span>
+            <h3>Understanding cost beyond <span class="hl">interest</span></h3>
+            <p>A practical breakdown of total funding cost, including fees, timing, and opportunity trade-offs.</p>
+            <a href="#guide-cost" class="btn btn--secondary">Read guide</a>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Strategy_CHess.jpeg" alt=""></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Risk</span>
+            <h3>How private investors assess <span class="hl">risk</span></h3>
+            <p>A clear framework for evaluating downside, protections, and deal structure in private lending.</p>
+            <a href="#guide-risk" class="btn btn--secondary">Read guide</a>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Review_Documents.png" alt=""></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Preparation</span>
+            <h3>Preparing for <span class="hl">funding</span></h3>
+            <p>What information matters, how to present it clearly, and why preparation changes outcomes more than rates.</p>
+            <a href="#guide-preparation" class="btn btn--secondary">Read guide</a>
+          </div>
+        </article>
+      </div>
+      <p class="pending-strip" style="margin-top: var(--space-6);">
+        <strong>Awaiting content:</strong> 3 featured guide PDFs (copy + metadata in <code>content/guides.md</code>; asset files pending).
+      </p>
+    </div>
+  </section>
+
+  <section class="approach-vault" id="library" aria-labelledby="library-heading" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="approach-vault__head" style="max-width: 720px;">
+        <span class="eyebrow">Library</span>
+        <h2 id="library-heading">Access our complete <span class="hl">library</span></h2>
+        <p>Receive curated guides, frameworks, and insights delivered directly to your inbox.</p>
+      </div>
+      <div style="max-width: 480px; margin: var(--space-6) auto 0;">
+        <form action="#subscribe" method="post" onsubmit="event.preventDefault();" style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <label class="sr-only" for="library-email">Email address</label>
+          <input id="library-email" type="email" placeholder="Your email address" required style="flex: 1; padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid oklch(30% 0.005 60); background: oklch(13% 0.005 60); color: var(--fg-on-dark); font-family: var(--font-body); font-size: var(--text-base); min-height: 44px;">
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+        <p style="font-size: var(--text-xs); color: var(--fg-on-dark-muted); margin-top: var(--space-3); text-align: center;">Registration required. We deliver guides tailored to your situation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-vault" aria-labelledby="faq-heading" style="background: var(--bg-dark-alt);">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Questions</span>
+        <h2 id="faq-heading">Clarity on our guides, access, and <span class="hl">approach</span></h2>
+      </div>
+      <div class="faq" role="list">
+        <details>
+          <summary>Who are these guides for?</summary>
+          <p>Our guides serve borrowers navigating non-bank lending, developers structuring complex deals, and investors building private lending portfolios. Each guide addresses real scenarios where traditional finance falls short.</p>
+        </details>
+        <details>
+          <summary>Do I need to register to download?</summary>
+          <p>Yes. Registration ensures we can deliver guides tailored to your situation and keep you informed of new resources. It takes a moment and opens access to our complete library.</p>
+        </details>
+        <details>
+          <summary>How current are these frameworks?</summary>
+          <p>Our guides reflect current Australian lending practices and regulatory environments. We update them regularly as market conditions and lending structures evolve.</p>
+        </details>
+        <details>
+          <summary>Can I share these with my team?</summary>
+          <p>Guides are for your personal use. If your team needs access, contact us and we can discuss options that suit your situation.</p>
+        </details>
+        <details>
+          <summary>What if I need specific advice?</summary>
+          <p>These guides provide education and frameworks, not personal financial advice. For scenarios specific to your circumstances, our team is ready to discuss your situation directly.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  {{> footer}}
+
+</body>
+</html>
