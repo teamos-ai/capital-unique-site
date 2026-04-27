@@ -1,0 +1,72 @@
+<!--
+  partials/footer.html — site footer (Direction B "The Vault")
+  Replaces Relume Footer10.
+
+  Requires: src/shared/tokens.css + src/shared/direction-b.css
+  Uses classes: .footer, .footer__top, .footer__brand, .footer__col, .footer__subscribe,
+               .footer__bottom, .footer__legal, .footer__social
+  Asset paths: ../../Image%20Assets/  (resolves correctly from styled/ and partials/)
+  Year is hard-coded — update during Phase 5 packaging or templatize via {{YEAR}}.
+-->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a href="/" class="footer__brand" aria-label="Capital Unique — home">
+        <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+        <span>capital unique</span>
+      </a>
+      <div class="footer__col">
+        <h4>Capital</h4>
+        <ul>
+          <li><a href="/get-capital">Borrow Capital</a></li>
+          <li><a href="/private-capital">Fund Capital</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#login">Account Login</a></li>
+          <li><a href="#waitlist">Waitlist</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Insights &amp; Resources</h4>
+        <ul>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/insights-and-resources">Resources</a></li>
+          <li><a href="/calculators">Calculators</a></li>
+          <li><a href="/charles-ai">Charles A.I</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/private-capital">Join Investors Network</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__subscribe">
+        <h4>Connect</h4>
+        <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+        <form action="#" method="post" onsubmit="event.preventDefault();">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input id="footer-email" type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn--primary">Join</button>
+        </form>
+        <small>By subscribing you agree to our <a href="#privacy">Privacy Policy</a>.</small>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Capital Unique. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="#privacy">Privacy policy</a>
+        <a href="#terms">Terms and conditions</a>
+        <a href="#cookies">Cookie settings</a>
+      </div>
+      <div class="footer__social" aria-label="Social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">○</a>
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>

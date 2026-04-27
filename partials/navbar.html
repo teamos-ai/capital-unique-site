@@ -1,0 +1,26 @@
+<!--
+  partials/navbar.html — site navigation (Direction B "The Vault")
+  Replaces Relume Navbar13.
+
+  Requires: src/shared/tokens.css + src/shared/direction-b.css
+  Uses classes: .navbar, .navbar__inner, .navbar__brand, .navbar__nav, .navbar__cta
+  Contained inside: .container (from tokens.css)
+  Asset paths: ../../Image%20Assets/  (resolves correctly from styled/ and partials/)
+  Phase 5 substitute: replace ../../Image%20Assets/ with the chosen CDN_BASE.
+-->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="/" class="navbar__brand" aria-label="Capital Unique — home">
+      <img src="../../Image%20Assets/Logo%20Square.png" alt="" width="40" height="40">
+      <span>capital unique</span>
+    </a>
+    <nav class="navbar__nav" aria-label="Primary">
+      <a href="/get-capital">Capital ▾</a>
+      <a href="/get-capital#waitlist">Waitlist</a>
+      <a href="/insights-and-resources">Insights &amp; Resources ▾</a>
+      <a href="/charles-ai">Charles A.I</a>
+      <a href="/about">About</a>
+    </nav>
+    <a href="#login" class="navbar__cta">Login</a>
+  </div>
+</header>

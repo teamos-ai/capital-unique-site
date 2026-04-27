@@ -1,0 +1,55 @@
+<!--
+  partials/how-funding-works.html — 4-step process block (Direction B "The Vault")
+  Reused on: home, overview, get-capital + adapted variants on most service pages.
+
+  Requires: src/shared/tokens.css + src/shared/direction-b.css
+  Uses classes: .process-vault, .process-vault__inner, .process-vault__intro, .process-vault__steps,
+               .vstep, .vstep__num, .vstep__title, .vstep__body, .eyebrow, .hl
+  Contained inside: .container (auto-applied via .process-vault__inner)
+
+  Customization (Phase 3 build script):
+    {{EYEBROW}}      — eyebrow label, e.g. "The Process" / "Our approach"
+    {{HEADING}}      — section heading, default "How funding works"
+    {{LEAD}}         — intro paragraph (60–80 words)
+    {{PRIMARY_CTA}}  — primary CTA label + href, default "Book Quick Chat"
+    {{SECONDARY_CTA}}— secondary CTA label + href, default "Charles A.I"
+    Step labels follow canonical 4-set: Understand / Assess / Confirm / Deploy.
+    Service-page variants may override labels (e.g. "Execute" instead of "Deploy"
+    on /property-development) — see docs/copy-gaps.md cross-cutting decision #1.
+-->
+<section class="process-vault" aria-labelledby="process-heading">
+  <div class="container process-vault__inner">
+    <div class="process-vault__intro">
+      <span class="eyebrow">The Process</span>
+      <h2 id="process-heading">How funding works</h2>
+      <p>We start by understanding your objectives and assessing the opportunity with care. From there, we structure the right solution and guide the process through to funding with clarity at every stage. The approach is deliberate, transparent, and designed to move forward with confidence.</p>
+      <div style="display:flex; gap: var(--space-4); flex-wrap: wrap;">
+        <a href="#book-chat" class="btn btn--primary">Book Quick Chat</a>
+        <a href="/charles-ai" class="btn btn--link" style="color: var(--accent);">Charles A.I</a>
+      </div>
+    </div>
+
+    <ol class="process-vault__steps">
+      <li class="vstep">
+        <span class="vstep__num" aria-hidden="true">01</span>
+        <h3 class="vstep__title"><span class="hl">Understand</span> the deal</h3>
+        <p class="vstep__body">We discuss your business objectives, timing, and structure so we can <span class="hl">understand</span> what you're trying to achieve.</p>
+      </li>
+      <li class="vstep">
+        <span class="vstep__num" aria-hidden="true">02</span>
+        <h3 class="vstep__title">Assess options</h3>
+        <p class="vstep__body">We review the information and identify the most suitable funding approach based on your needs.</p>
+      </li>
+      <li class="vstep">
+        <span class="vstep__num" aria-hidden="true">03</span>
+        <h3 class="vstep__title">Confirm terms</h3>
+        <p class="vstep__body">We clearly explain the proposed terms, costs, and conditions before anything moves forward.</p>
+      </li>
+      <li class="vstep">
+        <span class="vstep__num" aria-hidden="true">04</span>
+        <h3 class="vstep__title">Deploy funding</h3>
+        <p class="vstep__body">Once agreed, we manage the process through to funding and remain involved as the capital is deployed.</p>
+      </li>
+    </ol>
+  </div>
+</section>

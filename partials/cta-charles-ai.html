@@ -1,0 +1,40 @@
+<!--
+  partials/cta-charles-ai.html — Charles A.I CTA block (Direction B "The Vault")
+  Replaces Relume Cta25 / Cta33 / Cta57 patterns.
+  Reused on: business, how-it-works, property-development, private-capital, agriculture,
+             commercial, construction, charles-ai, calculators (when used as Charles A.I CTA).
+
+  Requires: src/shared/tokens.css + src/shared/direction-b.css
+  Uses classes: .final-vault, .final-vault__inner, .final-vault__eyebrow, .final-vault__ctas,
+               .final-vault__hero, .hl
+  Contained inside: .container
+
+  Customization (Phase 3 build script):
+    {{HEADING}}      — section heading, default "Start with Charles A.I"
+    {{LEAD}}         — body, default "Get a clear read on your scenario in minutes."
+    {{PRIMARY_CTA}}  — primary CTA, default "Use Charles A.I"
+    {{SECONDARY_CTA}}— secondary CTA, default "Book a call"
+    Background hero photo defaults to John_Capital Unique_Footer_Pressure.jpeg.
+    Service-page variants may swap to a different mood photo from docs/brand-spec.md inventory.
+
+  Note: This partial is the same shape as the home page's "Ready to move forward" final CTA.
+  When BOTH a Charles A.I CTA AND a final CTA appear on a page (e.g. service pages have
+  cta-charles-ai mid-page + a custom final CTA), differentiate by heading text only —
+  never use this partial twice on a page.
+-->
+<section class="final-vault" aria-labelledby="cta-charles-heading">
+  <div class="container">
+    <div class="final-vault__inner">
+      <span class="final-vault__eyebrow">Start with clarity</span>
+      <h2 id="cta-charles-heading">Speak with <span class="hl">Charles A.I</span></h2>
+      <p>Get a clear read on your scenario in minutes. Charles asks the right questions, structures your context, and prepares the conversation before our team even joins.</p>
+      <div class="final-vault__ctas">
+        <a href="/charles-ai" class="btn btn--primary">Use Charles A.I</a>
+        <a href="#book-chat" class="btn btn--secondary">Book a call</a>
+      </div>
+    </div>
+  </div>
+  <div class="final-vault__hero" aria-hidden="true">
+    <img src="../../Image%20Assets/John_Capital%20Unique_Footer_Pressure.jpeg" alt="" loading="lazy">
+  </div>
+</section>

@@ -1,0 +1,52 @@
+<!--
+  partials/testimonial.html — testimonial cards section (Direction B "The Vault")
+  Replaces Relume Testimonial33 / Testimonial3.
+  Reused on: home, overview, about, get-capital.
+
+  Requires: src/shared/tokens.css + src/shared/direction-b.css
+  Uses classes: .testimonials-vault, .testimonials-vault__head, .testimonials-vault__grid,
+               .vquote, .vquote__stars, .vquote__author, .pending-strip, .eyebrow
+  Contained inside: .container
+
+  Status: AWAITING-CONTENT — real testimonials pending across all consuming pages.
+  Tracked in docs/copy-gaps.md. Each consuming page should:
+    1. Replace [Quote N] placeholders with real testimonial copy.
+    2. Replace [Name]/[Role]/[Company] placeholders with real attribution.
+    3. Optionally swap .avatar div with an <img src="..." class="avatar" alt="..."> when headshots arrive.
+    4. Remove the .pending-strip once all card slots are filled with real content.
+
+  Customization (Phase 3 build script):
+    {{EYEBROW}}    — eyebrow label, default "Voices"
+    {{HEADING}}    — section heading, default "What clients say"
+    {{LEAD}}       — short intro, default "Those who've worked with us speak to the difference clarity and speed make."
+-->
+<section class="testimonials-vault" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="testimonials-vault__head">
+      <span class="eyebrow">Voices</span>
+      <h2 id="testimonials-heading">What clients say</h2>
+      <p>Those who've worked with us speak to the difference clarity and speed make.</p>
+    </div>
+    <div class="testimonials-vault__grid">
+      <article class="vquote">
+        <div class="vquote__stars" aria-label="Rated 5 out of 5">★ ★ ★ ★ ★</div>
+        <blockquote>"[Quote 1 — pending real testimonial copy]"</blockquote>
+        <div class="vquote__author">
+          <span class="avatar" aria-hidden="true"></span>
+          <span><strong>[Name]</strong>[Role], [Company]</span>
+        </div>
+      </article>
+      <article class="vquote">
+        <div class="vquote__stars" aria-label="Rated 5 out of 5">★ ★ ★ ★ ★</div>
+        <blockquote>"[Quote 2 — pending real testimonial copy]"</blockquote>
+        <div class="vquote__author">
+          <span class="avatar" aria-hidden="true"></span>
+          <span><strong>[Name]</strong>[Role], [Company]</span>
+        </div>
+      </article>
+      <div class="pending-strip">
+        <strong>Awaiting content:</strong> 2–4 short quotes with name + role + company. Tracked in <code>docs/copy-gaps.md</code>.
+      </div>
+    </div>
+  </div>
+</section>
