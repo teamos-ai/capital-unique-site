@@ -173,7 +173,7 @@ body {
 .pedestal__coin::after {
   content: "";
   width: 70%; height: 70%;
-  background-image: url("../../../Image%20Assets/Logo%20Square.png");
+  background-image: url("https://teamos-ai.github.io/capital-unique-site/public/images/logo-icon-bronze.png");
   background-size: contain; background-position: center; background-repeat: no-repeat;
   filter: drop-shadow(0 2px 4px oklch(0% 0 0 / 0.5));
 }
