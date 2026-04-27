@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Direction C · The Quarterly — Capital Unique</title>
+  <meta name="description" content="Phase 2 design demo — Direction C: editorial-typographic treatment of the Capital Unique home page.">
+
+  <!-- Google Fonts: Montserrat (display + eyebrow) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;600i&family=Montserrat:wght@600;700;800&display=swap">
+
+  <!-- Shared design tokens -->
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       Direction C · "The Quarterly"
+       Editorial-typographic. Type-led. Cream + navy + bronze pull-quote.
+       Lineage: Pentagram (Bierut) × Irma Boom. Reference: FT Weekend,
+       Bloomberg Markets quarterly, NYT Magazine, HBR.
+       ───────────────────────────────────────────────────────── */
+
+    /* ─── Local layout primitives (don't redefine tokens) ────── */
+    :root {
+      /* article-width column for long-form sections */
+      --col-article: 720px;
+      --col-wide: 1120px;
+      --rule: 1.5px solid var(--color-cloud-burst);
+      --rule-thin: 1px solid var(--color-cloud-burst);
+      --rule-hair: 1px solid oklch(27.5% 0.094 270 / 0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--color-neutral-lightest);
+      color: var(--color-cloud-burst);
+      font-family: var(--font-body, "Inter", system-ui, sans-serif);
+      font-size: var(--text-base, 1rem);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--color-brandy-punch); }
+
+    .wrap {
+      max-width: var(--col-wide);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+    }
+    .col {
+      max-width: var(--col-article);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+    }
+
+    /* Section vertical rhythm — generous, magazine-grade */
+    .section {
+      padding-block: clamp(80px, 11vw, 160px);
+      position: relative;
+    }
+    .section + .section { border-top: var(--rule); }
+
+    /* ─── Demo banner (matches direction-a) ──────────────────── */
+    .demo-banner {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--color-brandy-punch);
+      color: var(--color-neutral-lightest);
+      padding: 12px clamp(20px, 4vw, 32px);
+      font-family: var(--font-body, Inter, sans-serif);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex; gap: 24px; align-items: center; justify-content: space-between;
+      letter-spacing: 0.01em;
+    }
+    .demo-banner a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .demo-banner a:hover { color: var(--color-neutral-lightest); opacity: 0.85; }
+
+    /* ─── Masthead nav (slim, light, editorial) ──────────────── */
+    .masthead {
+      position: sticky; top: 39px; z-index: 50;
+      background: var(--color-neutral-lightest);
+      border-bottom: var(--rule-thin);
+    }
+    .masthead__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-block: 18px;
+      gap: 24px;
+    }
+    .masthead__brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .masthead__brand img {
+      height: 28px; width: auto; display: block;
+    }
+    .masthead__date {
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-cloud-burst);
+      font-weight: 600;
+      border-left: var(--rule-thin);
+      padding-left: 16px;
+      margin-left: 4px;
+    }
+    .masthead__nav {
+      display: flex; gap: clamp(16px, 2.5vw, 32px);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .masthead__nav a {
+      padding-block: 6px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .masthead__nav a:hover {
+      color: var(--color-cloud-burst);
+      border-bottom-color: var(--color-brandy-punch);
+    }
+    .masthead__login {
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-cloud-burst);
+    }
+    .masthead__login::after {
+      content: " →";
+      font-weight: 400;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+    .masthead__login:hover::after { transform: translateX(3px); }
+    @media (max-width: 880px) {
+      .masthead__nav { display: none; }
+      .masthead__date { display: none; }
+    }
+
+    /* ─── Section header system ──────────────────────────────── */
+    .sec-head {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+      padding-bottom: 18px;
+      margin-bottom: 56px;
+      border-bottom: var(--rule);
+    }
+    .sec-head__num {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      color: var(--color-brandy-punch);
+      letter-spacing: 0.02em;
+      font-feature-settings: "lnum" 1;
+    }
+    .sec-head__label {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-cloud-burst);
+    }
+    .sec-head__page {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-neutral-dark);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* ─── Hero — TYPE-ONLY. No photography. ──────────────────── */
+    .hero {
+      padding-block: clamp(80px, 12vw, 200px) clamp(64px, 9vw, 128px);
+      position: relative;
+    }
+    .hero__inner {
+      max-width: var(--col-wide);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+      position: relative;
+    }
+    .hero__numeral {
+      position: absolute;
+      top: 0;
+      right: clamp(20px, 4vw, 48px);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      color: var(--color-brandy-punch);
+      letter-spacing: 0.04em;
+    }
+    .hero__numeral::before {
+      content: "PAGE 01 / 06 ";
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--color-neutral-dark);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .hero__eyebrow {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-cloud-burst);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: var(--rule);
+      max-width: 380px;
+    }
+    .hero h1 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.5rem, 10vw, 8.25rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      color: var(--color-cloud-burst);
+      margin: 0;
+      max-width: 14ch;
+    }
+    .hero h1 .hl {
+      color: var(--color-brandy-punch);
+      font-style: italic;
+      font-weight: 800;
+    }
+    .hero__rule {
+      width: 80px; height: 1.5px;
+      background: var(--color-cloud-burst);
+      margin: 48px 0 32px;
+    }
+    .hero__lede {
+      font-family: "Inter", sans-serif;
+      font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+      line-height: 1.55;
+      max-width: 60ch;
+      color: var(--color-neutral-darkest);
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+    .hero__links {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .hero__links a {
+      color: var(--color-cloud-burst);
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--color-cloud-burst);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .hero__links a:hover {
+      color: var(--color-brandy-punch);
+      border-bottom-color: var(--color-brandy-punch);
+    }
+    .hero__links a::after { content: "  →"; font-weight: 600; }
+
+    /* ─── Trust strip — minimal, hairline ─────────────────────── */
+    .trust {
+      padding-block: clamp(48px, 6vw, 88px);
+      border-top: var(--rule);
+      border-bottom: var(--rule);
+    }
+    .trust__inner {
+      max-width: var(--col-wide);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+      text-align: center;
+    }
+    .trust__label {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-cloud-burst);
+      margin-bottom: 24px;
+    }
+    .trust__roman {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--color-brandy-punch);
+      letter-spacing: 0.1em;
+      display: inline-block;
+      margin: 0 8px;
+    }
+    .trust__list {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--color-cloud-burst);
+      font-weight: 500;
+    }
+    .trust__list span { padding-inline: 14px; }
+    .trust__list span + span { border-left: var(--rule-thin); }
+
+    /* ─── Approach (long-form article) ───────────────────────── */
+    .approach .col p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      margin-block: 0 1.5em;
+      color: var(--color-neutral-darkest);
+      max-width: 64ch;
+    }
+    .approach__lede::first-letter {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      color: var(--color-cloud-burst);
+      font-size: 5.5em;
+      float: left;
+      line-height: 0.85;
+      padding: 8px 14px 0 0;
+      margin-top: 4px;
+      letter-spacing: -0.03em;
+    }
+    .approach__lede {
+      font-size: 1.1875rem !important;
+      line-height: 1.7 !important;
+    }
+    .approach__sub {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+      color: var(--color-cloud-burst);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      margin-block: 64px 8px;
+      padding-top: 24px;
+      border-top: var(--rule-thin);
+      max-width: 36ch;
+    }
+    .approach__sub-eyebrow {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-brandy-punch);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Inset photograph — FT-style, captioned */
+    .figure {
+      margin: 56px auto;
+      max-width: 100%;
+    }
+    .figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: contrast(1.02) saturate(0.92);
+    }
+    .figure figcaption {
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--color-neutral-dark);
+      padding: 14px 0 0;
+      border-top: var(--rule-hair);
+      margin-top: 14px;
+      max-width: 60ch;
+    }
+    .figure figcaption strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-cloud-burst);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 11px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Pull quote */
+    .pullquote {
+      max-width: 56ch;
+      margin: 80px auto;
+      padding: 36px 0;
+      border-top: var(--rule);
+      border-bottom: var(--rule);
+      text-align: left;
+    }
+    .pullquote p {
+      font-family: "Montserrat", sans-serif !important;
+      font-weight: 700 !important;
+      font-size: clamp(1.625rem, 3.2vw, 2.5rem) !important;
+      line-height: 1.18 !important;
+      letter-spacing: -0.02em !important;
+      color: var(--color-cloud-burst) !important;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+    .pullquote p .hl { color: var(--color-brandy-punch); font-style: italic; }
+    .pullquote cite {
+      display: block;
+      margin-top: 20px;
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--color-neutral-dark);
+      font-weight: 400;
+    }
+
+    /* ─── Process — 4 numbered subsections, type-rhythm only ─── */
+    .process .col { max-width: var(--col-wide); }
+    .process__intro {
+      max-width: var(--col-article);
+      margin-inline: auto;
+      margin-bottom: 96px;
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.65;
+      color: var(--color-neutral-darkest);
+      padding-inline: clamp(20px, 4vw, 48px);
+    }
+    .process__steps {
+      display: flex; flex-direction: column; gap: 88px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: var(--col-article);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+      position: relative;
+    }
+    @media (min-width: 880px) {
+      .step {
+        grid-template-columns: 180px 1fr;
+        gap: 48px;
+        max-width: 880px;
+      }
+    }
+    .step__num {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+      line-height: 0.85;
+      color: var(--color-brandy-punch);
+      letter-spacing: -0.04em;
+      font-feature-settings: "lnum" 1;
+    }
+    .step__num::after {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 1.5px;
+      background: var(--color-cloud-burst);
+      margin-top: 16px;
+    }
+    .step__body h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      color: var(--color-cloud-burst);
+      margin: 0 0 20px;
+    }
+    .step__body h3 .hl { color: var(--color-brandy-punch); font-style: italic; font-weight: 700; }
+    .step__body p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--color-neutral-darkest);
+      margin-block: 0 1em;
+      max-width: 56ch;
+    }
+    .step__body p:last-child { margin-bottom: 0; }
+
+    /* ─── Two voices — the only 2-column section ─────────────── */
+    .voices__inner {
+      max-width: var(--col-wide);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+    @media (min-width: 880px) {
+      .voices__inner {
+        grid-template-columns: 1fr 1.5px 1fr;
+        gap: 64px;
+      }
+      .voices__rule {
+        background: var(--color-cloud-burst);
+        opacity: 0.4;
+      }
+    }
+    .voices__rule { display: none; }
+    @media (min-width: 880px) { .voices__rule { display: block; } }
+
+    .voice__eyebrow {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-brandy-punch);
+      padding-bottom: 14px;
+      border-bottom: var(--rule);
+      margin-bottom: 28px;
+    }
+    .voice h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.625rem, 2.8vw, 2.125rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--color-cloud-burst);
+      margin: 0 0 24px;
+    }
+    .voice h3 .hl { color: var(--color-brandy-punch); font-style: italic; }
+    .voice p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--color-neutral-darkest);
+      margin-block: 0 1.25em;
+      max-width: 44ch;
+    }
+    .voice__link {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-cloud-burst);
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--color-cloud-burst);
+    }
+    .voice__link:hover {
+      color: var(--color-brandy-punch);
+      border-bottom-color: var(--color-brandy-punch);
+    }
+    .voice__link::after { content: "  →"; }
+
+    /* ─── In their words — pull-quote testimonials ───────────── */
+    .testimonials__inner {
+      max-width: 880px;
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+    }
+    .testimonial {
+      padding: 44px 0;
+      border-top: var(--rule);
+      border-bottom: var(--rule);
+      margin-bottom: 64px;
+    }
+    .testimonial:last-child { margin-bottom: 0; }
+    .testimonial blockquote {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--color-cloud-burst);
+      max-width: 28ch;
+    }
+    .testimonial blockquote::before {
+      content: "“";
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 1.4em;
+      line-height: 0;
+      color: var(--color-brandy-punch);
+      vertical-align: -0.18em;
+      margin-right: 2px;
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: var(--rule-hair);
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      color: var(--color-neutral-dark);
+      font-weight: 400;
+    }
+    .testimonial cite strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-cloud-burst);
+      display: inline;
+    }
+    .pending-note {
+      max-width: 880px;
+      margin: 56px auto 0;
+      padding: 16px 20px;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      color: var(--color-neutral-dark);
+      border-top: var(--rule-hair);
+      border-bottom: var(--rule-hair);
+      text-align: center;
+    }
+    .pending-note strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-brandy-punch);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    /* ─── Final CTA — one line, type-only ────────────────────── */
+    .final-cta__inner {
+      max-width: 1000px;
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+      text-align: left;
+    }
+    .final-cta h2 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.75rem, 7.5vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      color: var(--color-cloud-burst);
+      margin: 0;
+      max-width: 14ch;
+    }
+    .final-cta h2 .hl { color: var(--color-brandy-punch); font-style: italic; }
+    .final-cta__rule {
+      width: 100px; height: 1.5px;
+      background: var(--color-cloud-burst);
+      margin: 40px 0 28px;
+    }
+    .final-cta p {
+      font-family: "Inter", sans-serif;
+      font-size: clamp(1rem, 1.3vw, 1.125rem);
+      line-height: 1.65;
+      max-width: 52ch;
+      color: var(--color-neutral-darkest);
+      margin-block: 0 36px;
+    }
+    .final-cta__links {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0;
+    }
+    .final-cta__links a {
+      color: var(--color-cloud-burst);
+      padding-block: 6px;
+      border-bottom: 1.5px solid var(--color-cloud-burst);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .final-cta__links a:hover {
+      color: var(--color-brandy-punch);
+      border-bottom-color: var(--color-brandy-punch);
+    }
+    .final-cta__links a::after { content: "  →"; }
+    .final-cta__links .sep {
+      display: inline-block;
+      padding: 0 18px;
+      color: var(--color-brandy-punch);
+      font-weight: 800;
+      letter-spacing: 0;
+      border-bottom: none;
+    }
+    .final-cta__close-rule {
+      width: 100%; height: 1.5px;
+      background: var(--color-cloud-burst);
+      margin-top: 96px;
+    }
+
+    /* ─── Footer (colophon) ──────────────────────────────────── */
+    .footer {
+      background: var(--color-neutral-lightest);
+      padding-block: 56px 40px;
+      border-top: var(--rule-thin);
+    }
+    .footer__inner {
+      max-width: var(--col-wide);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .footer__top {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: var(--rule-hair);
+    }
+    .footer__brand img { height: 26px; width: auto; display: block; }
+    .footer__nav {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-cloud-burst);
+      display: flex; flex-wrap: wrap; align-items: center;
+    }
+    .footer__nav a { padding-inline: 10px; }
+    .footer__nav a + a { border-left: var(--rule-hair); }
+    .footer__bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--color-neutral-dark);
+    }
+    .footer__legal { display: flex; gap: 0; flex-wrap: wrap; }
+    .footer__legal a { padding-inline: 10px; }
+    .footer__legal a + a { border-left: var(--rule-hair); }
+    .footer__legal a:first-child { padding-left: 0; }
+    .footer__social {
+      display: flex; gap: 14px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .footer__social a { color: var(--color-cloud-burst); }
+    .footer__social a:hover { color: var(--color-brandy-punch); }
+    .colophon {
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 11px;
+      color: var(--color-neutral-dark);
+      letter-spacing: 0.04em;
+      max-width: 60ch;
+    }
+
+    /* ─── Selection ──────────────────────────────────────────── */
+    ::selection {
+      background: var(--color-brandy-punch);
+      color: var(--color-neutral-lightest);
+    }
+
+    /* ─── Print-magazine subtle paper warmth on cream ────────── */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse at 50% 0%, oklch(95% 0.01 80 / 0.4), transparent 70%);
+      mix-blend-mode: multiply;
+    }
+
+    /* Small-screen tweaks */
+    @media (max-width: 600px) {
+      .sec-head { grid-template-columns: auto 1fr; }
+      .sec-head__page { display: none; }
+      .pullquote { margin-block: 56px; }
+      .testimonial blockquote { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Demo banner ══════════════════════════════════════════ -->
+  <div class="demo-banner">
+    <span><strong>Direction C · "The Quarterly"</strong> &nbsp;—&nbsp; editorial typography, navy + cream, type-led</span>
+    <span>
+      <a href="direction-a.html">A</a> &nbsp;·&nbsp;
+      <a href="direction-b.html">B</a> &nbsp;·&nbsp;
+      <a href="direction-c.html">C</a>
+    </span>
+  </div>
+
+  <!-- ═══ Masthead ═════════════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="wrap masthead__inner">
+      <a href="#" class="masthead__brand" aria-label="Capital Unique — home">
+        <img src="../Image%20Assets/Logo%20Retangle%20Long.png" alt="Capital Unique">
+        <span class="masthead__date">Vol. I &nbsp;·&nbsp; Quarterly &nbsp;·&nbsp; April 2026</span>
+      </a>
+      <nav class="masthead__nav" aria-label="Primary">
+        <a href="#approach">Capital</a>
+        <a href="#">Waitlist</a>
+        <a href="#">Insights</a>
+        <a href="#">Charles A.I</a>
+        <a href="#">About</a>
+      </nav>
+      <a href="#" class="masthead__login">Login</a>
+    </div>
+  </header>
+
+  <!-- ═══ I. Hero — TYPE ONLY, no photography ════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__inner">
+      <div class="hero__numeral">I.</div>
+      <div class="hero__eyebrow">The Quarterly &nbsp;·&nbsp; Statement of Intent</div>
+
+      <h1>Capital <span class="hl">Intelligently</span> Applied.</h1>
+
+      <div class="hero__rule" aria-hidden="true"></div>
+
+      <p class="hero__lede">
+        Capital Unique provides non-bank lending for complex scenarios where traditional finance falls short. Whether you're building, investing, or growing, we move with clarity and speed — quietly, deliberately, and on terms designed around the deal, not the template.
+      </p>
+
+      <div class="hero__links">
+        <a href="#">Borrow</a>
+        <a href="#">Fund</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Trust strip — minimal, hairline ═════════════════════ -->
+  <section class="trust" aria-label="Trust">
+    <div class="trust__inner">
+      <div class="trust__label">
+        <span class="trust__roman">§</span>
+        Trusted by Australia's most discerning investors
+        <span class="trust__roman">§</span>
+      </div>
+      <div class="trust__list">
+        <span>Webflow</span><span>Relume</span><span>Webflow</span><span>Relume</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ II. Approach — long-form ═══════════════════════════ -->
+  <section class="section approach" id="approach">
+    <div class="col">
+      <header class="sec-head">
+        <span class="sec-head__num">II.</span>
+        <span class="sec-head__label">Approach &nbsp;·&nbsp; Built for those who think differently</span>
+        <span class="sec-head__page">Section 02 / 06</span>
+      </header>
+
+      <p class="approach__lede">
+        Capital Unique exists where traditional banking ends. We understand complex commercial deals, unconventional scenarios, and the investors who fund them — and we work with people who would rather have a conversation than fill in another form. Where the bank sees a deviation from policy, we see the underlying logic of the deal.
+      </p>
+
+      <p>
+        Our work sits between two audiences who rarely sit at the same table. On one side, borrowers with capable businesses, real assets, and timelines that don't bend to credit-committee calendars. On the other, private investors and family offices looking for governed exposure, not a brochure of products. Most of what we do is to make those two needs meet, intelligibly, on terms that hold up under scrutiny.
+      </p>
+
+      <p>
+        We move quietly, think carefully, and deliver with precision. Decisions are made by the people who structure them. Conversations are short. Documentation is plain. The capital, when it arrives, is the easy part.
+      </p>
+
+      <figure class="figure">
+        <img src="../Image%20Assets/John_Capital%20Unique_Office_Seated.jpeg" alt="Capital Unique advisor seated at office desk">
+        <figcaption>
+          <strong>Figure 01 &nbsp;·&nbsp; The Office</strong>
+          The work begins with a conversation, not a form. Photographed on Collins Street, Melbourne — early autumn, 2026.
+        </figcaption>
+      </figure>
+
+      <p>
+        The discipline is consistent across mandates. Same team. Same standard. Same patience for the complicated case the bank wouldn't read past the first page. The deal sets the cadence — not the calendar.
+      </p>
+
+      <!-- Pull quote -->
+      <blockquote class="pullquote">
+        <p>"<span class="hl">Capital</span> when banks say no — and only when the deal genuinely deserves it."</p>
+        <cite>— On the discipline of saying no, more often than yes.</cite>
+      </blockquote>
+
+      <!-- Borrowers -->
+      <h3 class="approach__sub">
+        <span class="approach__sub-eyebrow">For borrowers</span>
+        Capital when banks say no.
+      </h3>
+      <p>
+        Fast assessment on deals others decline, with transparent terms and no unnecessary friction. The work is structured, not improvised — but it's structured around your situation, not slotted into a product box. Where the deal is sound and the timeline is real, we move.
+      </p>
+
+      <!-- Investors -->
+      <h3 class="approach__sub">
+        <span class="approach__sub-eyebrow">For investors</span>
+        Structured opportunities with clear governance.
+      </h3>
+      <p>
+        Capital Unique works with private investors and family offices seeking governed exposure with clear terms, defined risk, and long-term alignment. Each opportunity is structured before it's offered. Reporting is candid. Returns are explained, not implied.
+      </p>
+
+      <!-- Discipline -->
+      <h3 class="approach__sub">
+        <span class="approach__sub-eyebrow">Discipline</span>
+        Intelligent, <em>discreet</em>, reliable.
+      </h3>
+      <p>
+        We move quietly, think carefully, and deliver with precision. The brand of finance you may not have noticed because it didn't need to announce itself.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ III. The Process ════════════════════════════════════ -->
+  <section class="section process" id="process">
+    <div class="col" style="max-width: var(--col-wide);">
+      <header class="sec-head">
+        <span class="sec-head__num">III.</span>
+        <span class="sec-head__label">The Process &nbsp;·&nbsp; How funding works</span>
+        <span class="sec-head__page">Section 03 / 06</span>
+      </header>
+    </div>
+
+    <p class="process__intro">
+      We start by understanding your objectives and assessing the opportunity with care. From there, we structure the right solution and guide the process through to funding with clarity at every stage. The approach is deliberate, transparent, and designed to move forward with confidence.
+    </p>
+
+    <ol class="process__steps" style="list-style: none; padding: 0; margin: 0;">
+      <li class="step">
+        <div class="step__num">01.</div>
+        <div class="step__body">
+          <h3><span class="hl">Understand</span> the deal</h3>
+          <p>We discuss your business objectives, timing, and structure so we can understand what you're trying to achieve. The first conversation is short and specific — what the capital is for, when it needs to be in place, and what's already moving.</p>
+          <p>No forms. No prequalification theatre. Just enough to know whether we're the right hands for the work.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step__num">02.</div>
+        <div class="step__body">
+          <h3>Assess <em>options</em></h3>
+          <p>We review the information and identify the most suitable funding approach based on your needs, your timeline, and the underlying asset or cash flow. Where there's a cleaner structure, we'll say so. Where the conventional path is best, we'll say that too.</p>
+          <p>Most deals reveal their right structure within a few hours of careful reading.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step__num">03.</div>
+        <div class="step__body">
+          <h3>Confirm <em>terms</em></h3>
+          <p>We clearly explain the proposed terms, costs, and conditions before anything moves forward. The numbers are written plainly. The risks are named, not hidden in the small print. Nothing in the documentation is intended to surprise you later.</p>
+          <p>Confirm in writing. Move when you're ready.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step__num">04.</div>
+        <div class="step__body">
+          <h3><span class="hl">Deploy</span> funding</h3>
+          <p>Once agreed, we manage the process through to funding and remain involved as the capital is deployed. The relationship doesn't end at settlement — most of our work begins there, in the quiet stretch between the term sheet and the result the deal was built for.</p>
+          <p>Same team, same standard, all the way through.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ═══ IV. Two voices — only 2-column section ═════════════ -->
+  <section class="section voices" id="voices">
+    <div class="col" style="max-width: var(--col-wide);">
+      <header class="sec-head">
+        <span class="sec-head__num">IV.</span>
+        <span class="sec-head__label">Two voices &nbsp;·&nbsp; Two pathways, one disciplined approach</span>
+        <span class="sec-head__page">Section 04 / 06</span>
+      </header>
+    </div>
+
+    <div class="voices__inner">
+      <article class="voice voice--borrowers">
+        <div class="voice__eyebrow">For borrowers</div>
+        <h3>Strategic <span class="hl">capital</span> for complex decisions.</h3>
+        <p>
+          We work with businesses, developers, and investors who need funding structured around real-world objectives — not standardised lending models. Bridging finance, development capital, working capital, transitional structures: the deals that don't fit, but ought to.
+        </p>
+        <p>
+          Decisions in days. Documentation in plain English. The same advisor from the first conversation through to deployment.
+        </p>
+        <a href="#" class="voice__link">Borrow Capital</a>
+      </article>
+
+      <div class="voices__rule" aria-hidden="true"></div>
+
+      <article class="voice voice--investors">
+        <div class="voice__eyebrow">For investors</div>
+        <h3>Deploy capital with structure and <span class="hl">control</span>.</h3>
+        <p>
+          Capital Unique works with private investors and family offices seeking governed opportunities with clear terms, defined risk, and long-term alignment. Each opportunity is shaped before it's offered, and reported on candidly through to its conclusion.
+        </p>
+        <p>
+          The intent is enduring partnerships, not transaction flow.
+        </p>
+        <a href="#" class="voice__link">Provide Capital</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ V. In their words — testimonials ═══════════════════ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="col" style="max-width: var(--col-wide);">
+      <header class="sec-head">
+        <span class="sec-head__num">V.</span>
+        <span class="sec-head__label">In their words &nbsp;·&nbsp; What clients say</span>
+        <span class="sec-head__page">Section 05 / 06</span>
+      </header>
+    </div>
+
+    <div class="testimonials__inner">
+      <div class="testimonial">
+        <blockquote>
+          [Quote pending — short reflection on clarity, speed, or trust from a borrower client.]
+        </blockquote>
+        <cite>
+          <strong>[Name]</strong>, [Role] &nbsp;·&nbsp; [Company] &nbsp;·&nbsp; Melbourne
+        </cite>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>
+          [Quote pending — investor reflection on governance, transparency, or long-term alignment.]
+        </blockquote>
+        <cite>
+          <strong>[Name]</strong>, [Role] &nbsp;·&nbsp; [Family Office] &nbsp;·&nbsp; Sydney
+        </cite>
+      </div>
+
+      <div class="pending-note">
+        <strong>Awaiting Content</strong> &nbsp;·&nbsp; 2–4 short quotes with name + role + company. Tracked in <code style="font-family:'Inter',monospace; font-style: normal;">docs/copy-gaps.md</code>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VI. Final CTA ══════════════════════════════════════ -->
+  <section class="section final-cta" id="contact">
+    <div class="col" style="max-width: var(--col-wide);">
+      <header class="sec-head">
+        <span class="sec-head__num">VI.</span>
+        <span class="sec-head__label">&nbsp;</span>
+        <span class="sec-head__page">Section 06 / 06</span>
+      </header>
+    </div>
+
+    <div class="final-cta__inner">
+      <h2>Ready to <span class="hl">move forward</span>.</h2>
+
+      <div class="final-cta__rule" aria-hidden="true"></div>
+
+      <p>
+        Let's discuss your scenario and explore what's possible together. Most conversations begin with a short note or a fifteen-minute call — enough to know whether the work is worth the next hour.
+      </p>
+
+      <div class="final-cta__links">
+        <a href="#">Get Started</a>
+        <span class="sep">·</span>
+        <a href="#">Speak with our team</a>
+        <span class="sep">·</span>
+        <a href="#">Charles A.I</a>
+      </div>
+
+      <div class="final-cta__close-rule" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer (colophon) ══════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <a href="#" class="footer__brand" aria-label="Capital Unique — home">
+          <img src="../Image%20Assets/Logo%20Retangle%20Long.png" alt="Capital Unique">
+        </a>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#">Borrow</a>
+          <a href="#">Fund</a>
+          <a href="#">Insights</a>
+          <a href="#">Charles A.I</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Calculators</a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Capital Unique. All rights reserved.</span>
+        <div class="footer__legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+        <div class="footer__social" aria-label="Social">
+          <a href="#">LinkedIn</a>
+          <a href="#">X</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+
+      <p class="colophon">
+        <em>Colophon.</em> Set in Montserrat (display) and Inter (body). Photography by John, on commission. Vol. I, the Quarterly edition. Printed digitally in Melbourne, Australia.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
