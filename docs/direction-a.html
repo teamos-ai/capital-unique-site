@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Direction A · The Boutique — Capital Unique</title>
+  <meta name="description" content="Phase 2 design demo — Direction A: light-led, Figma-faithful translation of the Capital Unique brand.">
+
+  <!-- Google Fonts: Montserrat (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+
+  <!-- Shared design tokens -->
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       Direction A · "The Boutique"
+       Figma-faithful, light-led, alternating dark/light scenes.
+       ───────────────────────────────────────────────────────── */
+
+    /* Demo banner */
+    .demo-banner {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--accent); color: var(--fg-on-dark);
+      padding: var(--space-3) var(--space-6);
+      font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--fw-semibold);
+      display: flex; gap: var(--space-6); align-items: center; justify-content: space-between;
+    }
+    .demo-banner a { color: inherit; text-decoration: underline; }
+
+    /* ─── Navbar ─────────────────────────────────────────────── */
+    .navbar {
+      position: sticky; top: 36px; z-index: 50;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .navbar__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-block: var(--space-4);
+    }
+    .navbar__brand {
+      display: flex; align-items: center; gap: var(--space-3);
+      font-family: var(--font-display); font-weight: var(--fw-black);
+      font-size: var(--text-md); letter-spacing: var(--ls-display);
+    }
+    .navbar__brand img { width: 40px; height: 40px; border-radius: var(--radius-md); }
+    .navbar__nav { display: flex; gap: var(--space-6); align-items: center; font-size: var(--text-base); font-weight: var(--fw-medium); }
+    .navbar__nav a { padding: var(--space-2) 0; }
+    .navbar__cta { background: var(--accent); color: var(--fg-on-dark); padding: var(--space-2) var(--space-5); border-radius: var(--radius-md); font-weight: var(--fw-semibold); }
+    .navbar__cta:hover { background: var(--accent-strong); color: var(--fg-on-dark); }
+    @media (max-width: 768px) {
+      .navbar__nav { display: none; }
+    }
+
+    /* ─── Hero (dark) ────────────────────────────────────────── */
+    .hero {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 0%, oklch(20% 0.04 50 / 0.4), transparent 60%),
+        var(--bg-dark);
+      color: var(--fg-on-dark);
+    }
+    .hero__inner {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding-block: var(--section-pad-hero);
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, var(--text-5xl));
+      max-width: 14ch; margin-inline: auto; margin-bottom: var(--space-6);
+    }
+    .hero__lead {
+      font-size: var(--text-md);
+      max-width: 56ch; margin-inline: auto; margin-bottom: var(--space-10);
+      color: var(--fg-on-dark-muted);
+    }
+    .hero__ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+    /* Floating photo tiles around the hero */
+    .hero__tiles {
+      position: absolute; inset: 0; z-index: 1;
+      pointer-events: none;
+    }
+    .hero__tile {
+      position: absolute;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card-dark);
+      border: 1px solid oklch(100% 0 0 / 0.06);
+    }
+    .hero__tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero__tile--1 { top: 8%; left: 4%; width: 12vw; aspect-ratio: 4/5; max-width: 160px; }
+    .hero__tile--2 { top: 4%; right: 8%; width: 13vw; aspect-ratio: 5/4; max-width: 180px; }
+    .hero__tile--3 { top: 38%; left: 2%; width: 11vw; aspect-ratio: 1/1; max-width: 140px; }
+    .hero__tile--4 { bottom: 8%; right: 4%; width: 14vw; aspect-ratio: 4/5; max-width: 200px; }
+    .hero__tile--5 { bottom: 4%; left: 12%; width: 11vw; aspect-ratio: 5/4; max-width: 160px; }
+    .hero__tile--6 { top: 30%; right: 0%; width: 10vw; aspect-ratio: 1/1; max-width: 140px; }
+
+    /* Bronze coin (the floating logo) */
+    .hero__coin {
+      position: absolute; bottom: 8%; left: 50%; transform: translateX(-50%);
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, oklch(75% 0.15 70), oklch(50% 0.13 50) 70%, oklch(35% 0.09 40));
+      box-shadow:
+        0 0 40px oklch(60% 0.16 55 / 0.5),
+        0 8px 24px oklch(0% 0 0 / 0.6),
+        inset 0 -2px 8px oklch(0% 0 0 / 0.3),
+        inset 0 2px 4px oklch(100% 0.05 70 / 0.4);
+      display: grid; place-items: center;
+      z-index: 3;
+    }
+    .hero__coin::after {
+      content: ""; width: 56%; height: 56%; background-image: url("../Image\ Assets/Logo\ Square.png");
+      background-size: contain; background-position: center; background-repeat: no-repeat;
+      filter: drop-shadow(0 1px 1px oklch(0% 0 0 / 0.4));
+    }
+
+    @media (max-width: 768px) {
+      .hero__tile { display: none; }
+      .hero__coin { width: 64px; height: 64px; }
+    }
+
+    /* ─── Logo strip (trust) ─────────────────────────────────── */
+    .trust {
+      background: var(--bg);
+      padding-block: var(--space-12);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .trust__heading {
+      text-align: center; color: var(--fg-muted);
+      font-size: var(--text-base); font-weight: var(--fw-semibold);
+      letter-spacing: 0.02em; margin-bottom: var(--space-8);
+    }
+    .trust__logos {
+      display: flex; justify-content: center; gap: var(--space-12);
+      flex-wrap: wrap; opacity: 0.65;
+    }
+    .trust__logo {
+      font-family: var(--font-display); font-weight: var(--fw-bold);
+      font-size: var(--text-md); color: var(--fg);
+      display: inline-flex; align-items: center; gap: var(--space-2);
+    }
+    .trust__logo::before {
+      content: ""; width: 22px; height: 22px;
+      background: var(--fg); mask: radial-gradient(circle, transparent 30%, black 32%);
+      -webkit-mask: radial-gradient(circle, transparent 30%, black 32%);
+    }
+
+    /* ─── Approach bento grid ────────────────────────────────── */
+    .approach {
+      background: var(--bg-alt);
+    }
+    .approach__head {
+      text-align: center; max-width: 36ch; margin: 0 auto var(--space-16);
+    }
+    .approach__head h2 {
+      font-size: clamp(2rem, 5vw, var(--text-3xl));
+      margin-block: var(--space-3) var(--space-5);
+    }
+    .approach__head p { color: var(--fg-muted); font-size: var(--text-md); }
+    .approach__grid {
+      display: grid; gap: var(--space-6);
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) {
+      .approach__grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "borrow icon-1   icon-2"
+          "borrow investor partners";
+      }
+      .approach__grid > .card--borrowers { grid-area: borrow; }
+      .approach__grid > .card--icon-1 { grid-area: icon-1; }
+      .approach__grid > .card--icon-2 { grid-area: icon-2; }
+      .approach__grid > .card--investors { grid-area: investor; }
+      .approach__grid > .card--partners { grid-area: partners; }
+    }
+    .a-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      border: var(--border-style-card-light);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform var(--duration-base) var(--easing-standard),
+                  box-shadow var(--duration-base) var(--easing-standard);
+    }
+    .a-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card-light); }
+    .a-card__img {
+      aspect-ratio: 4/3;
+      background: var(--bg-alt);
+      overflow: hidden;
+    }
+    .a-card__img img { width: 100%; height: 100%; object-fit: cover; }
+    .a-card__body { padding: var(--space-8); display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+    .a-card__eyebrow { font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--fg-muted); text-transform: uppercase; letter-spacing: var(--ls-eyebrow); }
+    .a-card h3 { font-size: var(--text-2xl); margin: 0; }
+    .a-card p { color: var(--fg-muted); }
+    .a-card__ctas { display: flex; gap: var(--space-4); margin-top: auto; padding-top: var(--space-4); }
+    .a-card--icon h3 { font-size: var(--text-xl); }
+    .a-card--icon { padding: var(--space-8); justify-content: space-between; gap: var(--space-6); }
+    .a-card--icon .a-card__icon {
+      width: 40px; height: 40px;
+      background: var(--accent); -webkit-mask: var(--icon-mask); mask: var(--icon-mask);
+      mask-size: contain; -webkit-mask-size: contain;
+    }
+    .a-card--icon h3 .hl { color: var(--accent); }
+
+    /* ─── How funding works (dark) ───────────────────────────── */
+    .process {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+    }
+    .process__inner {
+      display: grid; grid-template-columns: 1fr; gap: var(--space-12);
+    }
+    @media (min-width: 900px) {
+      .process__inner { grid-template-columns: 1fr 1fr; gap: var(--space-16); }
+    }
+    .process__intro h2 {
+      font-size: clamp(2rem, 5vw, var(--text-3xl));
+      margin-block: var(--space-3) var(--space-6);
+    }
+    .process__intro p {
+      font-size: var(--text-md); color: var(--fg-on-dark-muted);
+      margin-bottom: var(--space-8);
+    }
+    .process__steps {
+      display: flex; flex-direction: column; gap: var(--space-5);
+    }
+    .step {
+      background: oklch(15% 0.005 60);
+      border: 1px solid oklch(35% 0.005 60);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-5); row-gap: var(--space-3);
+      align-items: start;
+    }
+    .step__icon {
+      width: 32px; height: 32px;
+      stroke: var(--accent); fill: none; stroke-width: 1.5;
+      grid-row: 1 / 2; grid-column: 1 / 2;
+    }
+    .step__title { font-size: var(--text-xl); font-weight: var(--fw-bold); margin: 0; grid-column: 1 / -1; }
+    .step__title .num { color: var(--accent); margin-right: var(--space-2); }
+    .step__title .hl { color: var(--accent); }
+    .step__body { color: var(--fg-on-dark-muted); font-size: var(--text-base); grid-column: 1 / -1; }
+
+    /* ─── Testimonials (light, awaiting-content) ──────────────── */
+    .testimonials {
+      background: var(--bg-alt);
+    }
+    .testimonials__head {
+      max-width: 28ch; margin-bottom: var(--space-10);
+    }
+    .testimonials__head h2 { font-size: clamp(2rem, 5vw, var(--text-3xl)); margin-block: 0 var(--space-5); }
+    .testimonials__head p { color: var(--fg-muted); }
+    .testimonials__grid {
+      display: grid; grid-template-columns: 1fr; gap: var(--space-5);
+    }
+    @media (min-width: 768px) { .testimonials__grid { grid-template-columns: repeat(2, 1fr); } }
+    .quote-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      border: 1px solid var(--border-soft);
+    }
+    .quote-card__stars { color: var(--accent); letter-spacing: 0.05em; margin-bottom: var(--space-4); }
+    .quote-card blockquote { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--text-md); margin: 0 0 var(--space-6); line-height: var(--lh-heading); color: var(--fg); }
+    .quote-card__author { display: flex; gap: var(--space-3); align-items: center; color: var(--fg-muted); font-size: var(--text-sm); }
+    .quote-card__author strong { color: var(--fg); display: block; font-weight: var(--fw-semibold); }
+    .pending-strip {
+      background: oklch(95% 0.025 80); border: 1px dashed var(--accent);
+      border-radius: var(--radius-md); padding: var(--space-4) var(--space-6);
+      color: var(--fg-muted); font-size: var(--text-sm);
+      grid-column: 1 / -1;
+    }
+
+    /* ─── Final CTA + bronze hero ─────────────────────────────── */
+    .final-cta {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      text-align: center;
+    }
+    .final-cta__inner { padding-block: var(--section-pad-desktop) var(--space-16); }
+    .final-cta h2 { font-size: clamp(2rem, 5vw, var(--text-3xl)); margin-block: 0 var(--space-4); }
+    .final-cta p { color: var(--fg-on-dark-muted); margin-bottom: var(--space-8); }
+    .final-cta__ctas { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+    .final-cta__hero {
+      width: 100%;
+      aspect-ratio: 16 / 5;
+      background:
+        linear-gradient(180deg, transparent 0%, var(--bg-dark) 100%),
+        radial-gradient(ellipse at 50% 30%, oklch(60% 0.16 55), oklch(35% 0.10 50) 70%);
+      position: relative;
+      overflow: hidden;
+      margin-top: -1px;
+    }
+    .final-cta__hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; mix-blend-mode: lighten; }
+    .final-cta__hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 0%, oklch(20% 0.08 50 / 0.4) 50%, var(--bg-dark) 100%);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    .footer {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      padding-block: var(--section-pad-desktop) var(--space-8);
+    }
+    .footer__top {
+      display: grid; gap: var(--space-12);
+      grid-template-columns: 1fr;
+      padding-bottom: var(--space-12);
+      border-bottom: 1px solid oklch(30% 0.005 60);
+    }
+    @media (min-width: 768px) { .footer__top { grid-template-columns: 1.2fr 1fr 1fr 1fr 1.5fr; } }
+    .footer__brand { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-display); font-weight: var(--fw-black); font-size: var(--text-md); }
+    .footer__brand img { width: 40px; height: 40px; border-radius: var(--radius-md); }
+    .footer__col h4 { font-size: var(--text-base); font-weight: var(--fw-semibold); margin-bottom: var(--space-4); color: var(--fg-on-dark); font-family: var(--font-body); letter-spacing: 0; }
+    .footer__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+    .footer__col a { color: var(--fg-on-dark-muted); font-size: var(--text-sm); }
+    .footer__col a:hover { color: var(--accent); }
+    .footer__subscribe form { display: flex; gap: var(--space-2); margin-block: var(--space-3); }
+    .footer__subscribe input { flex: 1; padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid oklch(30% 0.005 60); background: oklch(15% 0.005 60); color: var(--fg-on-dark); font-family: var(--font-body); font-size: var(--text-sm); }
+    .footer__subscribe input::placeholder { color: var(--fg-on-dark-muted); }
+    .footer__subscribe .btn { padding-inline: var(--space-5); }
+    .footer__subscribe small { color: var(--fg-on-dark-muted); font-size: var(--text-xs); }
+    .footer__bottom {
+      display: flex; flex-wrap: wrap; gap: var(--space-6);
+      align-items: center; justify-content: space-between;
+      padding-top: var(--space-6);
+      font-size: var(--text-xs); color: var(--fg-on-dark-muted);
+    }
+    .footer__legal { display: flex; gap: var(--space-6); flex-wrap: wrap; }
+    .footer__legal a { color: var(--fg-on-dark); }
+    .footer__social { display: flex; gap: var(--space-4); }
+    .footer__social a { width: 24px; height: 24px; display: inline-grid; place-items: center; color: var(--fg-on-dark); }
+
+    /* Card gradient variants (Two-pathways pattern from Figma) */
+    .gradient-card {
+      position: relative; overflow: hidden;
+      border-radius: var(--radius-lg);
+      padding: var(--space-12);
+      color: var(--fg-on-dark); min-height: 360px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      gap: var(--space-3);
+    }
+    .gradient-card__eyebrow { font-size: var(--text-sm); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: var(--ls-eyebrow); opacity: 0.85; }
+    .gradient-card h3 { font-size: clamp(1.75rem, 4vw, var(--text-2xl)); }
+    .gradient-card p { color: oklch(95% 0 0 / 0.85); }
+    .gradient-card--bronze {
+      background:
+        radial-gradient(ellipse at 80% 20%, oklch(70% 0.16 60), transparent 60%),
+        linear-gradient(135deg, oklch(40% 0.12 50), oklch(25% 0.06 40));
+    }
+    .gradient-card--dark {
+      background:
+        radial-gradient(ellipse at 80% 20%, oklch(28% 0.06 160), transparent 60%),
+        linear-gradient(135deg, oklch(15% 0.03 160), var(--bg-dark));
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-banner">
+    <span><strong>Direction A · "The Boutique"</strong> &nbsp;—&nbsp; light-led, Figma-faithful translation</span>
+    <span>
+      <a href="direction-a.html">A</a> &nbsp;·&nbsp;
+      <a href="direction-b.html">B</a> &nbsp;·&nbsp;
+      <a href="direction-c.html">C</a>
+    </span>
+  </div>
+
+  <!-- ═══ Navbar ═══════════════════════════════════════════════ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__brand">
+        <img src="../Image%20Assets/Logo%20Square.png" alt="Capital Unique">
+        <span>capital unique</span>
+      </a>
+      <nav class="navbar__nav" aria-label="Primary">
+        <a href="#">Capital ▾</a>
+        <a href="#">Waitlist</a>
+        <a href="#">Insights &amp; Resources ▾</a>
+        <a href="#">Charles A.I</a>
+        <a href="#">About</a>
+      </nav>
+      <a href="#" class="navbar__cta">Login</a>
+    </div>
+  </header>
+
+  <!-- ═══ Hero (DARK) ══════════════════════════════════════════ -->
+  <section class="hero section--hero">
+    <div class="hero__tiles" aria-hidden="true">
+      <div class="hero__tile hero__tile--1"><img src="../Image%20Assets/John_Capital%20Unique_Desk_Coffee.jpeg" alt=""></div>
+      <div class="hero__tile hero__tile--2"><img src="../Image%20Assets/John_Capital%20Unique_Meeting_BoardRoom.png" alt=""></div>
+      <div class="hero__tile hero__tile--3"><img src="../Image%20Assets/John_Capital%20Unique_Calculator.jpeg" alt=""></div>
+      <div class="hero__tile hero__tile--4"><img src="../Image%20Assets/John_Capital%20Unique_Office_Profile_Seated.jpeg" alt=""></div>
+      <div class="hero__tile hero__tile--5"><img src="../Image%20Assets/John_Capital%20Unique_Hand_Shake.jpeg" alt=""></div>
+      <div class="hero__tile hero__tile--6"><img src="../Image%20Assets/John_Capital%20Unique_Strategy_CHess.jpeg" alt=""></div>
+    </div>
+    <div class="container hero__inner">
+      <h1>Capital <span class="hl">Intelligently</span> Applied.</h1>
+      <p class="hero__lead">We provide non-bank lending for complex scenarios where traditional finance falls short. Whether you're building, investing, or growing, we move with clarity and speed.</p>
+      <div class="hero__ctas">
+        <a href="#" class="btn btn--primary">Borrow</a>
+        <a href="#" class="btn btn--secondary" style="color: var(--fg-on-dark); border-color: var(--fg-on-dark);">Fund</a>
+      </div>
+    </div>
+    <div class="hero__coin" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══ Trust strip ══════════════════════════════════════════ -->
+  <section class="trust">
+    <div class="container">
+      <h2 class="trust__heading">Trusted by Australia's most discerning investors</h2>
+      <div class="trust__logos">
+        <span class="trust__logo">Webflow</span>
+        <span class="trust__logo">Relume</span>
+        <span class="trust__logo">Webflow</span>
+        <span class="trust__logo">Relume</span>
+        <span class="trust__logo">Webflow</span>
+        <span class="trust__logo">Relume</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Approach bento ═══════════════════════════════════════ -->
+  <section class="approach section">
+    <div class="container">
+      <div class="approach__head">
+        <span class="eyebrow">Approach</span>
+        <h2>Built for those who think differently</h2>
+        <p>Capital Unique exists where traditional banking ends. We understand complex commercial deals, unconventional scenarios, and the investors who fund them.</p>
+      </div>
+
+      <div class="approach__grid">
+        <article class="a-card card--borrowers">
+          <div class="a-card__img">
+            <img src="../Image%20Assets/John_Capital%20Unique_Office_Seated.jpeg" alt="Advisor at desk reviewing documents">
+          </div>
+          <div class="a-card__body">
+            <span class="a-card__eyebrow">Borrowers</span>
+            <h3>For borrowers seeking finance</h3>
+            <p>Capital when banks say no. Fast assessment on deals others decline, with transparent terms and no unnecessary friction. We move quietly, think carefully, and deliver with precision.</p>
+            <div class="a-card__ctas">
+              <a href="#" class="btn btn--secondary">Explore</a>
+              <a href="#" class="btn btn--link">Learn</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="a-card a-card--icon card--icon-1">
+          <span class="a-card__eyebrow">Discipline</span>
+          <h3>Intelligent, <span class="hl">discreet</span>, reliable</h3>
+          <p>We move quietly, think carefully, and deliver with precision.</p>
+          <a href="#" class="btn btn--link">Explore</a>
+        </article>
+
+        <article class="a-card a-card--icon card--icon-2">
+          <span class="a-card__eyebrow">Coverage</span>
+          <h3><span class="hl">Capital</span> when banks say no</h3>
+          <p>Fast assessment on deals others decline, with transparent terms.</p>
+          <a href="#" class="btn btn--link">Learn</a>
+        </article>
+
+        <article class="a-card card--investors">
+          <div class="a-card__img">
+            <img src="../Image%20Assets/John_Capital%20Unique_Headshot_Tan_Golden.jpeg" alt="Investor portrait, warm light">
+          </div>
+          <div class="a-card__body">
+            <span class="a-card__eyebrow">Investors</span>
+            <h3>For investors seeking returns</h3>
+            <p>Structured opportunities with clear governance, managed risk, and meaningful partnerships.</p>
+            <a href="#" class="btn btn--link">Explore</a>
+          </div>
+        </article>
+
+        <article class="a-card card--partners">
+          <div class="a-card__img">
+            <img src="../Image%20Assets/John_Capital%20Unique_Meeting_Women.png" alt="Partnership meeting">
+          </div>
+          <div class="a-card__body">
+            <span class="a-card__eyebrow">Partners</span>
+            <h3>Deploy capital with clarity</h3>
+            <p>Structured deals, managed risk, genuine partnerships built to endure.</p>
+            <a href="#" class="btn btn--link">Explore</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ How funding works (DARK) ═════════════════════════════ -->
+  <section class="process section">
+    <div class="container process__inner">
+      <div class="process__intro">
+        <span class="eyebrow eyebrow--on-dark">The Process</span>
+        <h2>How funding works</h2>
+        <p>We start by understanding your objectives and assessing the opportunity with care. From there, we structure the right solution and guide the process through to funding with clarity at every stage. The approach is deliberate, transparent, and designed to move forward with confidence.</p>
+        <div style="display:flex; gap: var(--space-4); flex-wrap: wrap;">
+          <a href="#" class="btn btn--secondary" style="color: var(--fg-on-dark); border-color: var(--fg-on-dark);">Book Quick Chat</a>
+          <a href="#" class="btn btn--link">Charles A.I</a>
+        </div>
+      </div>
+
+      <ol class="process__steps" style="list-style: none; padding: 0; margin: 0;">
+        <li class="step">
+          <svg class="step__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 13l3-3 3 3 5-5 5 5M3 18h18" /></svg>
+          <h3 class="step__title"><span class="num">01</span> <span class="hl">Understand</span> the deal</h3>
+          <p class="step__body">We discuss your business objectives, timing, and structure so we can <span class="hl">understand</span> what you're trying to achieve.</p>
+        </li>
+        <li class="step">
+          <svg class="step__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M21 21l-4.5-4.5M9 11l1.5 1.5L13 10"/></svg>
+          <h3 class="step__title"><span class="num">02</span> Assess options</h3>
+          <p class="step__body">We review the information and identify the most suitable funding approach based on your needs.</p>
+        </li>
+        <li class="step">
+          <svg class="step__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M4 12h10M4 18h10M18 6l2 2 3-3M18 12l2 2 3-3M18 18l2 2 3-3"/></svg>
+          <h3 class="step__title"><span class="num">03</span> Confirm terms</h3>
+          <p class="step__body">We clearly explain the proposed terms, costs, and conditions before anything moves forward.</p>
+        </li>
+        <li class="step">
+          <svg class="step__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3l3 1v3h-1l-1 9H8L7 11H6V8l3-1V4z"/></svg>
+          <h3 class="step__title"><span class="num">04</span> Deploy funding</h3>
+          <p class="step__body">Once agreed, we manage the process through to funding and remain involved as the capital is deployed.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══ Two pathways (gradient cards — Figma signature) ══════ -->
+  <section class="approach section section--light-alt">
+    <div class="container">
+      <div class="approach__head">
+        <span class="eyebrow">Dual purpose</span>
+        <h2>Two pathways. One disciplined approach.</h2>
+        <p>Capital Unique exists at the intersection of borrowers seeking flexible finance and investors seeking structured opportunities. We bridge the gap traditional banking leaves behind.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);" class="pathways">
+        <style>@media (min-width: 900px) { .pathways { grid-template-columns: 1fr 1fr !important; } }</style>
+        <article class="gradient-card gradient-card--bronze">
+          <span class="gradient-card__eyebrow">For borrowers</span>
+          <h3>Strategic capital for complex decisions</h3>
+          <p>We work with businesses, developers, and investors who need funding structured around real-world objectives—not standardised lending models.</p>
+          <a href="#" class="btn btn--link" style="color: var(--fg-on-dark);">Borrow Funds</a>
+        </article>
+        <article class="gradient-card gradient-card--dark">
+          <span class="gradient-card__eyebrow">For investors</span>
+          <h3>Deploy capital with structure and control</h3>
+          <p>Capital Unique works with private investors and family offices seeking governed opportunities with clear terms, defined risk, and long-term alignment.</p>
+          <a href="#" class="btn btn--link" style="color: var(--fg-on-dark);">Provide Funds</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Testimonials (LIGHT, awaiting-content) ═══════════════ -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="testimonials__head">
+        <h2>What clients say</h2>
+        <p>Those who've worked with us speak to the difference clarity and speed make.</p>
+      </div>
+      <div class="testimonials__grid">
+        <article class="quote-card">
+          <div class="quote-card__stars">★ ★ ★ ★ ★</div>
+          <blockquote>"[Quote 1 — pending real testimonial copy]"</blockquote>
+          <div class="quote-card__author">
+            <span style="display:block; width:40px; height:40px; border-radius:50%; background: var(--bg-alt); border: 1px solid var(--border-soft);"></span>
+            <span><strong>[Name]</strong>[Role], [Company]</span>
+          </div>
+        </article>
+        <article class="quote-card">
+          <div class="quote-card__stars">★ ★ ★ ★ ★</div>
+          <blockquote>"[Quote 2 — pending real testimonial copy]"</blockquote>
+          <div class="quote-card__author">
+            <span style="display:block; width:40px; height:40px; border-radius:50%; background: var(--bg-alt); border: 1px solid var(--border-soft);"></span>
+            <span><strong>[Name]</strong>[Role], [Company]</span>
+          </div>
+        </article>
+        <div class="pending-strip">
+          <strong>Awaiting content:</strong> 2–4 short quotes with name + role + company. Tracked in <code>docs/copy-gaps.md</code>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Final CTA (DARK) + bronze hero ════════════════════════ -->
+  <section class="final-cta">
+    <div class="container final-cta__inner">
+      <h2>Ready to move forward</h2>
+      <p>Let's discuss your scenario and explore what's possible together.</p>
+      <div class="final-cta__ctas">
+        <a href="#" class="btn btn--primary">Get Started</a>
+        <a href="#" class="btn btn--secondary" style="color: var(--fg-on-dark); border-color: var(--fg-on-dark);">Speak with our team</a>
+      </div>
+    </div>
+    <div class="final-cta__hero" aria-hidden="true">
+      <img src="../Image%20Assets/John_Capital%20Unique_Footer_Pressure.jpeg" alt="">
+    </div>
+  </section>
+
+  <!-- ═══ Footer ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#" class="footer__brand">
+          <img src="../Image%20Assets/Logo%20Square.png" alt="Capital Unique"> capital unique
+        </a>
+        <div class="footer__col">
+          <h4>Capital</h4>
+          <ul>
+            <li><a href="#">Borrow Capital</a></li>
+            <li><a href="#">Fund Capital</a></li>
+            <li><a href="#">Subscribe</a></li>
+            <li><a href="#">Account Login</a></li>
+            <li><a href="#">Waitlist</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Insights &amp; Resources</h4>
+          <ul>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Calculators</a></li>
+            <li><a href="#">Charles A.I</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Join Investors Network</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__subscribe">
+          <h4>Connect</h4>
+          <p style="font-size: var(--text-sm); color: var(--fg-on-dark-muted); margin-bottom: var(--space-3);">Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+          <form onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" aria-label="Email">
+            <button type="submit" class="btn btn--primary">Join</button>
+          </form>
+          <small>By subscribing you agree to our Privacy Policy</small>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Capital Unique. All rights reserved.</span>
+        <div class="footer__legal">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms and conditions</a>
+          <a href="#">Cookie settings</a>
+        </div>
+        <div class="footer__social" aria-label="Social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">○</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

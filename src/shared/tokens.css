@@ -1,0 +1,368 @@
+/* Capital Unique — Design tokens
+ * Source of truth: docs/brand-spec.md
+ * Do not edit ad-hoc. Update brand-spec.md first, then regenerate this file.
+ *
+ * Anti-AI-slop rules (huashu-design protocol):
+ *   - No purple gradients. Brand is bronze + navy + neutrals.
+ *   - No emoji icons. SVG icons only.
+ *   - No rounded-corner + thin left-border accent (AI cliché).
+ *   - No SVG silhouettes for people. Real photography only.
+ *   - No CSS-shape stand-ins for product/photo content.
+ *   - Bronze accent used strategically (filled CTAs, highlight words, gradient bases) — not as default tint.
+ */
+
+:root {
+  /* ─── Color: Neutrals (7-step) ───────────────────────────── */
+  --color-neutral-lightest: oklch(95.2% 0 0);            /* #F2F2F2 */
+  --color-neutral-lighter:  oklch(86.6% 0.001 17);       /* #DAD9D9 */
+  --color-neutral-light:    oklch(74.3% 0.001 60);       /* #B5B4B3 */
+  --color-neutral:          oklch(56.0% 0.005 80);       /* #848380 */
+  --color-neutral-dark:     oklch(38.7% 0.005 80);       /* #53514D */
+  --color-neutral-darker:   oklch(18.1% 0.005 60);       /* #221F1B */
+  --color-neutral-darkest:  oklch(6.7% 0.005 80);        /* #0A0702 */
+
+  /* ─── Color: Warm accents (bronze family) ────────────────── */
+  --color-brandy-punch: oklch(62.0% 0.155 50);           /* #CD722D */
+  --color-amber:        oklch(83.4% 0.180 89);           /* #FFC400 */
+  --color-marigold:     oklch(62.1% 0.115 70);           /* #BF862A */
+
+  /* ─── Color: Cool accents (navy family) ──────────────────── */
+  --color-cloud-burst: oklch(27.5% 0.094 270);           /* #273166 */
+  --color-ship-cove:   oklch(61.7% 0.064 265);           /* #7B8CBD */
+
+  /* ─── Color: Semantic aliases (components reference these) ─ */
+  --bg:           var(--color-neutral-lightest);
+  --bg-alt:       var(--color-neutral-lighter);
+  --bg-dark:      var(--color-neutral-darkest);
+  --bg-dark-alt:  var(--color-neutral-darker);
+
+  --fg:               var(--color-neutral-darkest);
+  --fg-muted:         var(--color-neutral-dark);
+  --fg-on-dark:       var(--color-neutral-lightest);
+  --fg-on-dark-muted: var(--color-neutral-light);
+
+  --accent:        var(--color-brandy-punch);
+  --accent-strong: var(--color-marigold);
+  --accent-bright: var(--color-amber);
+
+  --border:      var(--color-cloud-burst);
+  --border-soft: color-mix(in oklch, var(--color-cloud-burst) 30%, transparent);
+  --border-dark: var(--color-neutral-dark);
+
+  --focus-ring: var(--color-amber);
+
+  /* ─── Typography ─────────────────────────────────────────── */
+  --font-display: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-eyebrow: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Type scale — Major Third (1.25×) */
+  --text-xs:    0.75rem;   /* 12px — captions, fine print */
+  --text-sm:    0.875rem;  /* 14px — eyebrow caps, small UI */
+  --text-base:  1rem;      /* 16px — body default */
+  --text-md:    1.125rem;  /* 18px — body emphasis, leads */
+  --text-lg:    1.25rem;   /* 20px — step card body */
+  --text-xl:    1.5rem;    /* 24px — h4, step heading */
+  --text-2xl:   2rem;      /* 32px — h3 */
+  --text-3xl:   3rem;      /* 48px — h2 */
+  --text-4xl:   4.5rem;    /* 72px — h1 */
+  --text-5xl:   6rem;      /* 96px — page hero */
+
+  /* Line heights */
+  --lh-display:  1.05;
+  --lh-heading:  1.15;
+  --lh-body:     1.55;
+  --lh-small:    1.4;
+
+  /* Letter spacing */
+  --ls-eyebrow: 0.08em;
+  --ls-display: -0.015em;
+  --ls-body:    0;
+
+  /* Font weights */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  /* ─── Space scale (4-based) ──────────────────────────────── */
+  --space-1:  0.25rem;   /* 4 */
+  --space-2:  0.5rem;    /* 8 */
+  --space-3:  0.75rem;   /* 12 */
+  --space-4:  1rem;      /* 16 */
+  --space-5:  1.25rem;   /* 20 */
+  --space-6:  1.5rem;    /* 24 */
+  --space-8:  2rem;      /* 32 */
+  --space-10: 2.5rem;    /* 40 */
+  --space-12: 3rem;      /* 48 */
+  --space-16: 4rem;      /* 64 */
+  --space-20: 5rem;      /* 80 */
+  --space-24: 6rem;      /* 96 */
+  --space-32: 8rem;      /* 128 */
+
+  /* Section padding (vertical) */
+  --section-pad-mobile:  3rem;   /* 48 */
+  --section-pad-tablet:  4rem;   /* 64 */
+  --section-pad-desktop: 6rem;   /* 96 */
+  --section-pad-hero:    8rem;   /* 128 — heroes get more breathing room */
+
+  /* ─── Radius ─────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;  /* card default — matches Figma */
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ─── Shadow ─────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.04), 0 1px 3px oklch(0% 0 0 / 0.06);
+  --shadow-md: 0 4px 6px oklch(0% 0 0 / 0.05), 0 10px 15px oklch(0% 0 0 / 0.08);
+  --shadow-lg: 0 10px 25px oklch(0% 0 0 / 0.08), 0 20px 40px oklch(0% 0 0 / 0.12);
+  --shadow-card-light: 0 1px 0 oklch(0% 0 0 / 0.02), 0 8px 24px oklch(0% 0 0 / 0.06);
+  --shadow-card-dark:  0 1px 0 oklch(100% 0 0 / 0.04), 0 8px 24px oklch(0% 0 0 / 0.4);
+
+  /* ─── Borders ────────────────────────────────────────────── */
+  --border-width: 1.5px;
+  --border-style-card-light: var(--border-width) solid var(--border);
+  --border-style-card-dark:  var(--border-width) solid var(--border-dark);
+
+  /* ─── Motion ─────────────────────────────────────────────── */
+  --duration-fast:       120ms;
+  --duration-base:       200ms;
+  --duration-slow:       320ms;
+  --duration-extra-slow: 500ms;
+
+  --easing-standard:    cubic-bezier(0.2, 0, 0, 1);    /* Material standard */
+  --easing-decelerate:  cubic-bezier(0, 0, 0, 1);      /* enter */
+  --easing-accelerate:  cubic-bezier(0.3, 0, 1, 1);    /* exit */
+  --easing-emphasized:  cubic-bezier(0.2, 0, 0, 1);    /* hero / dramatic */
+
+  /* ─── Layout primitives ──────────────────────────────────── */
+  --container-default: 1280px;
+  --container-text:    960px;
+  --container-article: 720px;
+  --gutter-mobile:     1rem;
+  --gutter-desktop:    1.5rem;
+}
+
+/* Reduced-motion preference (per ui-ux-pro-max accessibility rules) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast:       0ms;
+    --duration-base:       0ms;
+    --duration-slow:       0ms;
+    --duration-extra-slow: 0ms;
+  }
+}
+
+/* Reset / baseline shared by all directions */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 100%;
+  line-height: var(--lh-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+}
+
+/* Default heading style — directions override per-page */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--text-4xl); }
+h2 { font-size: var(--text-3xl); line-height: var(--lh-heading); }
+h3 { font-size: var(--text-2xl); line-height: var(--lh-heading); font-weight: var(--fw-bold); }
+h4 { font-size: var(--text-xl); line-height: var(--lh-heading); font-weight: var(--fw-bold); }
+h5 { font-size: var(--text-md); line-height: var(--lh-heading); font-weight: var(--fw-semibold); }
+h6 { font-size: var(--text-base); line-height: var(--lh-heading); font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: var(--ls-eyebrow); }
+
+p { margin: 0; line-height: var(--lh-body); }
+p + p { margin-top: var(--space-4); }
+
+a { color: inherit; text-decoration: none; transition: color var(--duration-base) var(--easing-standard); }
+a:hover { color: var(--accent); }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Focus ring (accessibility) */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ─── Utility classes shared by all directions ──────────────── */
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-eyebrow);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--fg-muted);
+}
+
+.eyebrow--on-dark { color: var(--fg-on-dark); }
+
+/* Bronze highlight word (Figma pattern: "Capital", "discreet", etc.) */
+.hl { color: var(--accent); }
+
+.container {
+  width: 100%;
+  max-width: var(--container-default);
+  margin-inline: auto;
+  padding-inline: var(--gutter-mobile);
+}
+@media (min-width: 768px) {
+  .container { padding-inline: var(--gutter-desktop); }
+}
+
+.container--text { max-width: var(--container-text); }
+.container--article { max-width: var(--container-article); }
+
+/* Section vertical padding */
+.section {
+  padding-block: var(--section-pad-mobile);
+}
+@media (min-width: 768px) { .section { padding-block: var(--section-pad-tablet); } }
+@media (min-width: 1024px) { .section { padding-block: var(--section-pad-desktop); } }
+
+.section--hero {
+  padding-block: var(--section-pad-hero);
+}
+
+/* Color-mode section helpers */
+.section--light { background: var(--bg); color: var(--fg); }
+.section--light-alt { background: var(--bg-alt); color: var(--fg); }
+.section--dark { background: var(--bg-dark); color: var(--fg-on-dark); }
+.section--dark-alt { background: var(--bg-dark-alt); color: var(--fg-on-dark); }
+
+.section--dark .eyebrow,
+.section--dark-alt .eyebrow { color: var(--fg-on-dark-muted); }
+
+/* Buttons (the only true primitive — directions style further) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;            /* a11y: 44pt touch target */
+  padding-inline: var(--space-6);
+  padding-block: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-base) var(--easing-standard),
+    border-color     var(--duration-base) var(--easing-standard),
+    color            var(--duration-base) var(--easing-standard),
+    transform        var(--duration-fast) var(--easing-standard);
+}
+
+.btn:active { transform: scale(0.98); }
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--fg-on-dark);
+  border-color: var(--accent);
+}
+.btn--primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--fg-on-dark);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--fg);
+  border-color: var(--fg);
+}
+.btn--secondary:hover {
+  background: var(--fg);
+  color: var(--fg-on-dark);
+}
+
+.section--dark .btn--secondary,
+.section--dark-alt .btn--secondary {
+  color: var(--fg-on-dark);
+  border-color: var(--fg-on-dark);
+}
+.section--dark .btn--secondary:hover,
+.section--dark-alt .btn--secondary:hover {
+  background: var(--fg-on-dark);
+  color: var(--fg);
+}
+
+.btn--link {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+.btn--link::after {
+  content: "→";
+  display: inline-block;
+  margin-left: var(--space-2);
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+.btn--link:hover::after { transform: translateX(2px); }
+
+/* Card (base — directions add gradient / treatment variants) */
+.card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  border: var(--border-style-card-light);
+  padding: var(--space-8);
+}
+
+.section--dark .card,
+.section--dark-alt .card {
+  background: var(--bg-dark-alt);
+  border: var(--border-style-card-dark);
+  color: var(--fg-on-dark);
+}
+
+/* Visually-hidden (a11y) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
