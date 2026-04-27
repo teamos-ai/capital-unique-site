@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Capital Unique</title>
+  <meta name="description" content="Capital Unique is led by John Codrington, who personally oversees every engagement. Built through cycles, not trends.">
+  <meta property="og:title" content="About — Capital Unique">
+  <meta property="og:description" content="Capital Unique is led by John Codrington, who personally oversees every engagement. Built through cycles, not trends.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+
+  <style>
+    /* About-page-specific layout primitives */
+    .split {
+      display: grid; gap: var(--space-12);
+      grid-template-columns: 1fr;
+      align-items: center;
+      padding-block: var(--section-pad-desktop);
+    }
+    @media (min-width: 900px) {
+      .split { grid-template-columns: 1fr 1fr; gap: var(--space-16); }
+      .split--reverse > .split__media { order: 2; }
+    }
+    .split__media img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: var(--radius-lg);
+      filter: saturate(0.9) contrast(1.05);
+    }
+    .split__body .eyebrow { color: var(--accent); }
+    .split__body h2 {
+      font-family: var(--font-display); font-weight: var(--fw-black);
+      font-size: clamp(2rem, 5vw, var(--text-3xl));
+      line-height: 1.1; letter-spacing: -0.015em;
+      margin-block: var(--space-3) var(--space-5);
+    }
+    .split__body p { color: var(--fg-on-dark-muted); font-size: var(--text-md); line-height: 1.6; }
+    .split__body p + p { margin-top: var(--space-3); }
+    .split__body .btn { margin-top: var(--space-6); }
+
+    /* Standards section — full-bleed background photo with overlay */
+    .standards {
+      position: relative; overflow: hidden;
+      padding-block: clamp(96px, 14vw, 180px);
+      isolation: isolate;
+      color: var(--fg-on-dark);
+    }
+    .standards::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background-image: url("../../Image%20Assets/John_Capital%20Unique_WaitRoom_Painting.jpeg");
+      background-size: cover; background-position: center;
+      filter: saturate(0.7) brightness(0.55) contrast(1.1);
+    }
+    .standards::after {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 50%, oklch(15% 0.04 50 / 0.5), oklch(8% 0.03 50 / 0.85) 80%);
+    }
+    .standards__inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .standards .eyebrow { color: var(--accent); margin-bottom: var(--space-6); display: inline-block; }
+    .standards h2 {
+      font-family: var(--font-display); font-weight: var(--fw-black);
+      font-size: clamp(2rem, 5vw, var(--text-3xl));
+      line-height: 1.1; letter-spacing: -0.015em;
+      margin-bottom: var(--space-6);
+    }
+    .standards p { color: oklch(95% 0 0 / 0.85); font-size: var(--text-md); line-height: 1.6; max-width: 60ch; margin-inline: auto; }
+  </style>
+</head>
+<body>
+
+  {{> navbar}}
+
+  <!-- ═══ Hero — John Codrington ════════════════════════════════ -->
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="container hero-vault__inner" style="padding-block: clamp(96px, 14vw, 180px); display: grid; grid-template-columns: 1fr; gap: var(--space-12); text-align: left;">
+      <style>@media (min-width: 900px) { .about-hero { grid-template-columns: 1.2fr 1fr !important; align-items: center; } }</style>
+      <div class="about-hero" style="display: contents;">
+        <div>
+          <span class="hero-vault__eyebrow" style="margin-bottom: var(--space-6);">Founder · Capital Unique</span>
+          <h1 id="hero-heading" style="text-align: left; max-width: none;">John <span class="hl">Codrington</span></h1>
+          <p class="hero-vault__lead" style="text-align: left; margin-inline: 0; max-width: 56ch;">We provide non-bank lending for complex scenarios where traditional finance falls short. Whether you're building, investing, or growing, we move with clarity and speed.</p>
+          <div class="hero-vault__ctas" style="justify-content: flex-start;">
+            <a href="/contact" class="btn btn--primary">Book Quick Chat</a>
+            <a href="#social" class="btn btn--secondary">Social Accounts</a>
+          </div>
+        </div>
+        <div style="position: relative; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 24px 60px oklch(0% 0 0 / 0.55), 0 0 0 1px oklch(45% 0.10 55 / 0.4);">
+          <img src="../../Image%20Assets/John_Capital%20Unique_Headshot_Dark.jpeg" alt="John Codrington — founder of Capital Unique" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Built through cycles, not trends (split) ═════════════ -->
+  <section class="approach-vault" aria-labelledby="cycles-heading">
+    <div class="container">
+      <div class="split">
+        <div class="split__media">
+          <img src="../../Image%20Assets/John_Capital%20Unique_BlueBooks.png" alt="Stack of blue ledger books — heritage and accumulated knowledge">
+        </div>
+        <div class="split__body">
+          <span class="eyebrow">Cycles, not trends</span>
+          <h2 id="cycles-heading">Built through <span class="hl">cycles</span>, not trends</h2>
+          <p>Capital markets reward judgement earned over time.</p>
+          <p>Capital Unique is shaped by decades of exposure to real lending cycles—growth, contraction, volatility, and recovery—across property, business, and private capital.</p>
+          <p>The focus has never been volume. It has always been understanding risk, structure, and timing well enough to act with confidence.</p>
+          <a href="/get-capital" class="btn btn--secondary">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ One decision-maker. End to end. (split, reversed) ═══ -->
+  <section class="process-vault" aria-labelledby="decision-heading" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="split split--reverse">
+        <div class="split__media">
+          <img src="../../Image%20Assets/John_Capital%20Unique_Office_Profile_Seated.jpeg" alt="John Codrington at his desk — direct, accountable advisory">
+        </div>
+        <div class="split__body">
+          <span class="eyebrow">Direct access</span>
+          <h2 id="decision-heading">One decision-maker. <span class="hl">End to end.</span></h2>
+          <p>Capital Unique is led by John Codrington, who personally oversees every engagement. There are no hand-offs, committees, or intermediaries.</p>
+          <p>Every borrower and investor deals directly with the person responsible for judgement, structure, and outcomes.</p>
+          <p>This allows for faster understanding, clearer communication, and accountability that does not diffuse across teams.</p>
+          <a href="/contact" class="btn btn--primary">Speak with John</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ One advisor, one standard, one outcome (full-bleed) ═══ -->
+  <section class="standards" aria-labelledby="standards-heading">
+    <div class="container standards__inner">
+      <span class="eyebrow">Discipline</span>
+      <h2 id="standards-heading">One advisor, one <span class="hl">standard</span>, one outcome</h2>
+      <p>Capital Unique does not operate as a product distributor or volume broker. Each opportunity is approached as a standalone problem to be understood, structured, and assessed on its own merits. The work begins with listening—objectives, constraints, timing—and moves toward a structure that aligns capital with reality, not templates.</p>
+    </div>
+  </section>
+
+  {{> testimonial}}
+
+  {{> cta-charles-ai}}
+
+  {{> footer}}
+
+</body>
+</html>
