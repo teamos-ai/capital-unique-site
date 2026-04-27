@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capital Unique — Wireframes (Phase 1)</title>
+  <meta name="description" content="Phase 1 wireframe index. Bare semantic HTML, real copy, no design.">
+  <link rel="stylesheet" href="../src/shared/wireframe.css">
+  <style>
+    .wf-toc { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+    .wf-toc table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    .wf-toc th, .wf-toc td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+    .wf-toc th { background: #fafafa; font-weight: 600; }
+    .wf-toc tr:hover td { background: #fafcff; }
+    .wf-toc td.slug code { background: #f0f0f0; padding: 1px 5px; font-size: .85em; }
+    .wf-toc .pill { display: inline-block; padding: 1px 6px; font-size: .7rem; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; border-radius: 2px; margin-right: 4px; }
+    .wf-toc .pill.ok { background: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+    .wf-toc .pill.warn { background: #fff7e6; color: #d48806; border: 1px solid #ffd591; }
+    .wf-toc .pill.gap { background: #fff1f0; color: #cf1322; border: 1px solid #ffa39e; }
+    .wf-summary { max-width: 760px; margin: 0 auto 32px; padding: 16px; background: #fafafa; border: 1px solid #ddd; font-size: .9rem; }
+    .wf-summary ul { margin: 8px 0 0; padding-left: 1.25rem; }
+  </style>
+</head>
+<body>
+
+<main class="wf-toc">
+  <h1>Capital Unique — Wireframes (Phase 1)</h1>
+  <p>17 pages. Bare semantic HTML, real copy from <code>content/*.md</code>, component boundaries flagged with <code>data-component</code> / <code>data-partial</code>, image slots marked with <code>data-image</code>. Zero design.</p>
+
+  <div class="wf-summary">
+    <strong>What you're reviewing:</strong>
+    <ul>
+      <li>Page <em>structure</em> — does each section flow correctly, in the right order?</li>
+      <li>Copy <em>fit</em> — does the real markdown copy work in the section shapes Relume gave us?</li>
+      <li><em>Partial candidates</em> (green dashed) — agree these should become reusable components in Phase 2?</li>
+      <li><em>Awaiting-content</em> sections (yellow) — confirmed deferred to later phases?</li>
+      <li><em>Extra-from-copy</em> sections (yellow) — markdown copy with no matching Relume component; needs Phase 2 decisions.</li>
+    </ul>
+    Detailed flags per page in <a href="../docs/copy-gaps.md">docs/copy-gaps.md</a>.
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Page</th>
+        <th>Slug</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>01</td><td><a href="home.html">Home</a></td><td class="slug"><code>/</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">testimonials pending</span></td></tr>
+      <tr><td>02</td><td><a href="overview.html">Overview</a></td><td class="slug"><code>/overview</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">testimonials, project gallery, hero mismatch</span></td></tr>
+      <tr><td>03</td><td><a href="about.html">About</a></td><td class="slug"><code>/about</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">testimonials</span></td></tr>
+      <tr><td>04</td><td><a href="how-it-works.html">How it works</a></td><td class="slug"><code>/how-it-works</code></td><td><span class="pill gap">placeholder copy (intentional)</span></td></tr>
+      <tr><td>05</td><td><a href="get-capital.html">Get capital</a></td><td class="slug"><code>/get-capital</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">testimonials, project gallery</span></td></tr>
+      <tr><td>06</td><td><a href="business.html">Business</a></td><td class="slug"><code>/business</code></td><td><span class="pill ok">complete</span></td></tr>
+      <tr><td>07</td><td><a href="commercial.html">Commercial</a></td><td class="slug"><code>/commercial</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">tabs / scenarios partial copy</span></td></tr>
+      <tr><td>08</td><td><a href="construction.html">Construction</a></td><td class="slug"><code>/construction</code></td><td><span class="pill warn">agriculture copy bleed (preserved per brief)</span></td></tr>
+      <tr><td>09</td><td><a href="agriculture.html">Agriculture</a></td><td class="slug"><code>/agriculture</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">"structured around" bullets pending</span></td></tr>
+      <tr><td>10</td><td><a href="property-development.html">Property development</a></td><td class="slug"><code>/property-development</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">project gallery, label drift</span></td></tr>
+      <tr><td>11</td><td><a href="private-capital.html">Private capital</a></td><td class="slug"><code>/private-capital</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">scenario card bodies pending</span></td></tr>
+      <tr><td>12</td><td><a href="charles-ai.html">Charles A.I</a></td><td class="slug"><code>/charles-ai</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">3-step extra from copy</span></td></tr>
+      <tr><td>13</td><td><a href="calculators.html">Calculators</a></td><td class="slug"><code>/calculators</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">interactive logic TBD</span></td></tr>
+      <tr><td>14</td><td><a href="guides.html">Guides</a></td><td class="slug"><code>/guides</code></td><td><span class="pill ok">copy ok</span><span class="pill warn">PDF assets TBD</span></td></tr>
+      <tr><td>15</td><td><a href="articles.html">Articles</a></td><td class="slug"><code>/articles</code></td><td><span class="pill warn">index only — bodies in GHL blog</span></td></tr>
+      <tr><td>16</td><td><a href="insights-and-resources.html">Insights &amp; Resources</a></td><td class="slug"><code>/insights-and-resources</code></td><td><span class="pill ok">hub copy ok</span><span class="pill warn">downstream content TBD</span></td></tr>
+      <tr><td>17</td><td><a href="contact.html">Contact</a></td><td class="slug"><code>/contact</code></td><td><span class="pill gap">no copy supplied</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Visual key</h2>
+  <ul>
+    <li><strong>Solid grey-bordered blocks</strong> = <code>[data-component]</code> (Relume sections)</li>
+    <li><strong>Green dashed blocks</strong> = <code>[data-partial]</code> (Phase 2 reuse candidates: navbar, footer, how-funding-works, cta-charles-ai, logo-strip, testimonial)</li>
+    <li><strong>Yellow blocks</strong> = <code>data-status="awaiting-content"</code> or <code>data-status="extra-from-copy"</code></li>
+    <li><strong>Blue dashed boxes</strong> = <code>[data-image]</code> placeholders with Phase 4 prompt notes</li>
+  </ul>
+
+  <h2>Reuse candidates inventoried for Phase 2</h2>
+  <ul>
+    <li><code>partials/navbar.html</code> (Navbar13) — every page</li>
+    <li><code>partials/footer.html</code> (Footer10) — every page</li>
+    <li><code>partials/logo-strip.html</code> (Logo3) — home, overview, get-capital, charles-ai, articles + embedded variants on construction, property-development, private-capital</li>
+    <li><code>partials/how-funding-works.html</code> — home (Layout353), overview, get-capital + adapted on most service pages (with label-set decision pending)</li>
+    <li><code>partials/cta-charles-ai.html</code> — Cta25/Cta21/Cta33/Cta57/Cta58 across most service pages (with scope decision pending)</li>
+    <li><code>partials/testimonial.html</code> — home, overview, about, get-capital (all currently <code>awaiting-content</code>)</li>
+  </ul>
+</main>
+
+</body>
+</html>
