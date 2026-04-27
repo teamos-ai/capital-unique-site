@@ -17,12 +17,47 @@ Phase 3 Apply design → Phase 4 Images → Phase 5 GHL packaging → Phase 6 Ha
 
 Each phase covers all 17 pages before the next begins. Stop at every "Stop here" checkpoint. Per-page commits during Phases 1, 3, 5. Per-partial commits in Phase 2.
 
-## Repos to lean on
+## Skills installed (in `~/.claude/skills/`) and how each plugs into the build
 
-- `huashu-design` (https://github.com/teamos-ai/huashu-design) — Phase 2 design system. OKLCH tokens, anti-AI-slop rules, 20 design philosophies, 5-dimension review.
-- `website-launch-kit` (installed as `anthropic-skills:website-launch-kit`) — cherry-pick `scripts/generate-image.mjs` and the `GEMINI_API_KEY` config check for Phase 4 only. Do not apply its full clone-first flow to this 17-page site.
-- `gstack` (https://github.com/teamos-ai/gstack) — pull in review/QA agents (design-review, slop-scan, qa) at "Stop here" checkpoints.
-- `benai-skills` (https://github.com/teamos-ai/benai-skills) — meta-skills collection. Inspect `shared-skills/` for reusable building blocks before Phase 2.
+All skills are user-level. Most need a Claude Code restart before they're invocable as slash commands, but their `SKILL.md` files can be `Read` directly mid-session at any time.
+
+### Phase 2 (design system) — primary drivers
+- **`huashu-design`** — main driver. OKLCH tokens, anti-AI-slop rules, 20 design philosophies, 5-dimension review. Read `~/.claude/skills/huashu-design/SKILL.md` before generating `tokens.css`.
+- **`ui-ux-pro-max`** — second perspective on philosophy / token structure. Use as cross-check against huashu-design's choices, not as a competing source of truth. Resolve conflicts in favour of huashu-design.
+- **`design-system`** (sub-skill of ui-ux-pro-max) — token-system patterns.
+- **`brand`** (sub-skill of ui-ux-pro-max) — brand asset protocol; useful before/during the consolidated brand-input round.
+- **`design`** (sub-skill of ui-ux-pro-max) — visual design judgement, supplements huashu-design's review pass.
+
+### Phase 3 (apply design to wireframes)
+- **`ui-styling`** — concrete CSS / styling patterns when stitching tokens onto wireframes via partials.
+- **`design`** — visual review during the per-page styling pass.
+
+### Phase 4 (image generation)
+- **`website-launch-kit`** — cherry-pick `scripts/generate-image.mjs` + `GEMINI_API_KEY` config check only. Do **not** apply its full clone-first flow to this 17-page site.
+- **`prompt-master`** — use to refine Gemini Imagen prompts in `docs/image-manifest.md` before generation runs.
+
+### Phase 1 / 3 / 5 (review checkpoints)
+- **`gstack`** — multi-skill bundle (40+ sub-skills under `~/.claude/skills/gstack/`). Specifically use:
+  - `gstack/qa/SKILL.md` — quality-assurance pass at each checkpoint
+  - `gstack/review/SKILL.md` — code/output review
+  - `gstack/design-review/SKILL.md` — design pass after Phase 3
+  - `gstack/design-shotgun/SKILL.md` — fast comparative design review
+  - `gstack/slop-scan.config.json` — anti-AI-slop scan before Phase 5 packaging
+  - `gstack/ship/SKILL.md` — final packaging pass
+
+### Situational use (read on demand)
+- **`process-interviewer`** — use if a section's intent is unclear and we need to drive a structured Q&A round.
+- **`decision-toolkit`** — for the cross-cutting Phase 2 decisions in `docs/copy-gaps.md`.
+- **`fact-checker`** — only if any factual claims surface in the copy that need verification (e.g. "Australia's most discerning investors" trust line).
+- **`find-skills`** — if we hit a problem that may map to a skill we haven't yet considered.
+- **`humanizer`** — if any copy needs polishing (note: user is writing copy themselves, so use sparingly).
+
+### Installed but not directly load-bearing for this project
+On disk and available, but no natural fit for a 17-page non-bank-lender static site. Not flagged for active use here:
+`audio-transcriber`, `agent-browser`, `mcp-builder`, `frontend-slides`, `slides`, `deep-research`, `openrouter`, `file-organizer`, `banner-design`.
+
+### Reference repos (not installed as skills)
+- **`benai-skills`** (https://github.com/teamos-ai/benai-skills) — meta-skills collection. Inspect specific pieces from the GitHub repo on demand if a need surfaces.
 
 ## Content quirks (already known — do not re-flag)
 
