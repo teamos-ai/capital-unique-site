@@ -1,0 +1,28 @@
+"use client";
+
+import { Button } from "@relume_io/relume-ui";
+import React from "react";
+
+export function Header62() {
+  return (
+    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container max-w-lg text-center">
+        <p className="mb-3 font-semibold md:mb-4">Business</p>
+        <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+          Capital structured for real business conditions
+        </h1>
+        <p className="md:text-md">
+          We work with business owners and operators who need capital shaped
+          around complexity—timing, cash flow, assets, and structure—rather than
+          standard bank criteria.
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-x-4 md:mt-8">
+          <Button title="Book Quick Call">Book Quick Call</Button>
+          <Button title="Charles A.I" variant="secondary">
+            Charles A.I
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

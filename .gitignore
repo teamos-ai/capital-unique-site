@@ -1,0 +1,23 @@
+# Environment
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# Build output (final GHL upload bundle — not versioned)
+dist/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
