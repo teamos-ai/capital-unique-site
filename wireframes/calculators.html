@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculators — Capital Unique</title>
+  <meta name="description" content="Calculators designed for clarity. Each tool is built to help you understand the mechanics of your financial scenario.">
+  <link rel="stylesheet" href="../src/shared/wireframe.css">
+</head>
+<body>
+
+<dl class="wf-meta">
+  <div class="wf-meta-row"><dt>Slug:</dt><dd>/calculators</dd><dt>Relume folder:</dt><dd>calculators/</dd><dt>Status:</dt><dd>Wireframe (calculator interactive logic TBD)</dd></div>
+  <div class="wf-meta-row"><dt>Phase:</dt><dd>1 — Wireframe</dd><dt>Source:</dt><dd>relume-source/calculators/index.jsx + content/calculators.md</dd></div>
+</dl>
+
+<header class="wf-header" data-component="Navbar13" data-partial="navbar" role="banner">
+  <a href="#" aria-label="Capital Unique — home">[Logo: Capital Unique wordmark]</a>
+  <nav aria-label="Primary">
+    <ul class="wf-nav-list">
+      <li>
+        Capital
+        <ul>
+          <li><a href="#">Borrow</a></li>
+          <li><a href="#">Fund</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Waitlist</a></li>
+      <li>
+        Insights &amp; Resources
+        <ul>
+          <li><a href="#">Free Guides</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Calculators</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Charles A.I</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  <ul class="wf-ctas">
+    <li><a href="#">Login</a></li>
+  </ul>
+</header>
+
+<main>
+
+  <section data-component="Header60" aria-label="Hero">
+    <h1>Calculators designed for clarity</h1>
+    <p>Each tool is built to help you understand the mechanics of your financial scenario. Work through the numbers at your own pace.</p>
+    <div data-image="hero-background" data-aspect="16:9 full-bleed with 50% dark overlay">
+      <span class="wf-prompt">Editorial photograph evoking precise calculation and considered decision-making — overhead shot of a desk with documents, notebook, pen, perhaps a calculator or laptop spreadsheet. Australian context, sophisticated finance aesthetic. Real photography only.</span>
+    </div>
+  </section>
+
+  <section data-component="(no Relume component)" data-status="extra-from-copy" aria-label="Calculator suite">
+    <h2>Choose a calculator</h2>
+    <ul class="wf-cards" data-status="awaiting-content" aria-label="Calculator cards (interactive logic pending)">
+      <li>
+        <p><strong>Borrowing Capacity</strong></p>
+        <h3>Understand your true capacity</h3>
+        <p>Get a realistic view of what may be possible outside traditional banks, based on assets, structure, and timing—not rigid formulas. This helps you assess feasibility before progressing further.</p>
+        <ul class="wf-ctas"><li class="primary"><a href="#">Open calculator</a></li></ul>
+      </li>
+      <li>
+        <p><strong>Bridging Finance</strong></p>
+        <h3>The real cost of speed</h3>
+        <p>Explore the true cost of short-term and bridging finance across different timeframes. Designed to help you decide whether speed creates advantage—or unnecessary pressure.</p>
+        <ul class="wf-ctas"><li class="primary"><a href="#">Open calculator</a></li></ul>
+      </li>
+      <li>
+        <p><strong>Development Feasibility</strong></p>
+        <h3>Pressure-test your project</h3>
+        <p>Run a high-level feasibility check to understand funding balance, equity contribution, and margin sensitivity. Ideal for early-stage clarity before deeper assessment.</p>
+        <ul class="wf-ctas"><li class="primary"><a href="#">Open calculator</a></li></ul>
+      </li>
+      <li>
+        <p><strong>Equity Release</strong></p>
+        <h3>Unlock capital strategically</h3>
+        <p>See how much equity may be accessible under non-bank structures and what that means for risk and leverage. Built to support thoughtful capital planning, not overextension.</p>
+        <ul class="wf-ctas"><li class="primary"><a href="#">Open calculator</a></li></ul>
+      </li>
+      <li>
+        <p><strong>Risk vs Return Scenario</strong></p>
+        <h3>Balance risk and return</h3>
+        <p>Compare lending scenarios across different risk and yield profiles to understand trade-offs clearly. Designed for disciplined investors who prioritise structure over headline returns.</p>
+        <ul class="wf-ctas"><li class="primary"><a href="#">Open calculator</a></li></ul>
+      </li>
+    </ul>
+    <p class="wf-note"><strong>Phase 2:</strong> calculator card grid sits between Header60 and Cta21 — there is no matching Relume component for this index in <code>relume-source/calculators/index.jsx</code> (the Relume export only has Header60 + Cta21 + Footer10). Confirm whether each card opens its own page (e.g. <code>/calculators/borrowing-capacity</code>) or an inline modal, and decide on a card layout (icon vs. illustration vs. plain text). Tracked in docs/copy-gaps.md.</p>
+  </section>
+
+  <section data-component="Cta21" data-partial="cta-charles-ai" aria-label="Ready for a conversation">
+    <h2>Ready for a conversation</h2>
+    <p>Our advisors are available to discuss your specific scenario and guide you through the process.</p>
+    <ul class="wf-ctas">
+      <li class="primary"><a href="#">Contact</a></li>
+      <li><a href="#">Learn</a></li>
+    </ul>
+    <div data-image="cta-supporting" data-aspect="16:9 landscape">
+      <span class="wf-prompt">Editorial photo of a considered conversation — two people at a desk, daylight, restrained. Australian context, sophisticated finance aesthetic. Real photography only.</span>
+    </div>
+    <p class="wf-note"><strong>Phase 2:</strong> Cta21 in the Relume export uses generic "Contact / Learn" copy and is not flagged as a Charles A.I CTA in <code>content/calculators.md</code>. Confirm whether this should become the standard <code>cta-charles-ai</code> partial or remain a generic advisor-conversation CTA.</p>
+  </section>
+
+</main>
+
+<footer class="wf-footer" data-component="Footer10" data-partial="footer" role="contentinfo">
+  <a href="#" aria-label="Capital Unique — home">[Logo: Capital Unique wordmark]</a>
+  <div class="wf-footer-cols">
+    <div>
+      <h3>Capital</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">Borrow Capital</a></li>
+        <li><a href="#">Fund Capital</a></li>
+        <li><a href="#">Subscribe</a></li>
+        <li><a href="#">Account Login</a></li>
+        <li><a href="#">Waitlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Insights &amp; Resources</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Calculators</a></li>
+        <li><a href="#">Charles A.I</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Connect</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Join Investors Network</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Stay informed</h3>
+      <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+      <form>
+        <label for="footer-email">Email</label>
+        <input id="footer-email" type="email" placeholder="Your email address" disabled>
+        <button type="submit" disabled>Join</button>
+      </form>
+      <p><small>By subscribing you agree to our Privacy Policy.</small></p>
+    </div>
+  </div>
+  <hr>
+  <p><small>© [Year] Capital Unique. All rights reserved.</small></p>
+  <ul class="wf-nav-list" aria-label="Social">
+    <li><a href="#">Facebook</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">X (Twitter)</a></li>
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">YouTube</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
