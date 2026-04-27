@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capital Unique — Capital Intelligently Applied</title>
+  <meta name="description" content="Non-bank lending for complex scenarios where traditional finance falls short. Whether you're building, investing, or growing, we move with clarity and speed.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Capital Unique — Capital Intelligently Applied">
+  <meta property="og:description" content="Non-bank lending for complex scenarios where traditional finance falls short.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Montserrat (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+
+  <!-- Design tokens + Direction B "The Vault" -->
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+</head>
+<body>
+
+  {{> navbar}}
+
+  <!-- ═══ Hero — Bronze pedestal vault ═════════════════════════ -->
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="hero-vault__backdrop" aria-hidden="true">
+      <img src="../../Image%20Assets/John_Capital%20Unique_WaitRoom_Painting.jpeg" alt="">
+      <img src="../../Image%20Assets/John_Capital%20Unique_Book_Shelf.jpeg" alt="">
+    </div>
+    <div class="container hero-vault__inner">
+      <span class="hero-vault__eyebrow">Private capital · since the source</span>
+      <h1 id="hero-heading"><span class="hl">Capital</span> Intelligently Applied.</h1>
+      <p class="hero-vault__lead">We provide non-bank lending for complex scenarios where traditional finance falls short. Whether you're building, investing, or growing, we move with clarity and speed.</p>
+      <div class="hero-vault__ctas">
+        <a href="/get-capital" class="btn btn--primary">Borrow</a>
+        <a href="/private-capital" class="btn btn--secondary">Fund</a>
+      </div>
+    </div>
+    <div class="pedestal" aria-hidden="true">
+      <div class="pedestal__base"></div>
+      <div class="pedestal__beam"></div>
+      <div class="pedestal__halo"></div>
+      <div class="pedestal__coin"></div>
+    </div>
+  </section>
+
+  {{> logo-strip}}
+
+  <!-- ═══ Approach bento — "Built for those who think differently" ══ -->
+  <section class="approach-vault" aria-labelledby="approach-heading">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Approach</span>
+        <h2 id="approach-heading">Built for those who think differently</h2>
+        <p>Capital Unique exists where traditional banking ends. We understand complex commercial deals, unconventional scenarios, and the investors who fund them.</p>
+      </div>
+
+      <div class="approach-vault__grid">
+        <article class="vcard vcard--borrowers">
+          <div class="vcard__img">
+            <img src="../../Image%20Assets/John_Capital%20Unique_Office_Seated.jpeg" alt="Advisor at desk reviewing documents">
+          </div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Borrowers</span>
+            <h3>For borrowers seeking finance</h3>
+            <p>Capital when banks say no. Fast assessment on deals others decline, with transparent terms and no unnecessary friction. We move quietly, think carefully, and deliver with precision.</p>
+            <div class="vcard__ctas">
+              <a href="/get-capital" class="btn btn--secondary">Explore</a>
+              <a href="/get-capital" class="btn btn--link">Learn</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="vcard vcard--icon vcard--icon-1">
+          <span class="vcard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2 5h5l-4 3 1.5 5L12 12.5 7.5 15 9 10 5 7h5z"/></svg>
+          </span>
+          <span class="vcard__eyebrow">Discipline</span>
+          <h3>Intelligent, <span class="hl">discreet</span>, reliable</h3>
+          <p>We move quietly, think carefully, and deliver with precision.</p>
+          <a href="/about" class="btn btn--link">Explore</a>
+        </article>
+
+        <article class="vcard vcard--icon vcard--icon-2">
+          <span class="vcard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
+          </span>
+          <span class="vcard__eyebrow">Coverage</span>
+          <h3><span class="hl">Capital</span> when banks say no</h3>
+          <p>Fast assessment on deals others decline, with transparent terms.</p>
+          <a href="/get-capital" class="btn btn--link">Learn</a>
+        </article>
+
+        <article class="vcard vcard--investors">
+          <div class="vcard__img">
+            <img src="../../Image%20Assets/John_Capital%20Unique_Headshot_Tan_Golden.jpeg" alt="Investor portrait, warm light">
+          </div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Investors</span>
+            <h3>For investors seeking returns</h3>
+            <p>Structured opportunities with clear governance, managed risk, and meaningful partnerships.</p>
+            <a href="/private-capital" class="btn btn--link">Explore</a>
+          </div>
+        </article>
+
+        <article class="vcard vcard--partners">
+          <div class="vcard__img">
+            <img src="../../Image%20Assets/John_Capital%20Unique_Meeting_Women.png" alt="Partnership meeting">
+          </div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">Partners</span>
+            <h3>Deploy capital with clarity</h3>
+            <p>Structured deals, managed risk, genuine partnerships built to endure.</p>
+            <a href="/private-capital" class="btn btn--link">Explore</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {{> how-funding-works}}
+
+  <!-- ═══ Two pathways — borrower vs investor (cinematic dark cards) ══ -->
+  <section class="pathways-vault" aria-labelledby="pathways-heading">
+    <div class="container">
+      <div class="pathways-vault__head">
+        <span class="eyebrow">Dual purpose</span>
+        <h2 id="pathways-heading">Two pathways. One disciplined approach.</h2>
+        <p>Capital Unique exists at the intersection of borrowers seeking flexible finance and investors seeking structured opportunities. We bridge the gap traditional banking leaves behind.</p>
+      </div>
+      <div class="pathways-vault__grid">
+        <article class="pathway pathway--borrow" style="--pathway-img: url('../../Image%20Assets/John_Capital%20Unique_Strategy_CHess.jpeg');">
+          <span class="pathway__eyebrow">For borrowers</span>
+          <h3>Strategic <span class="hl">capital</span> for complex decisions</h3>
+          <p>We work with businesses, developers, and investors who need funding structured around real-world objectives—not standardised lending models.</p>
+          <a href="/get-capital" class="btn btn--link">Borrow Funds</a>
+        </article>
+        <article class="pathway pathway--invest" style="--pathway-img: url('../../Image%20Assets/John_Capital%20Unique_Headshot_Tan_Golden.jpeg');">
+          <span class="pathway__eyebrow">For investors</span>
+          <h3>Deploy capital with <span class="hl">structure</span> and control</h3>
+          <p>Capital Unique works with private investors and family offices seeking governed opportunities with clear terms, defined risk, and long-term alignment.</p>
+          <a href="/private-capital" class="btn btn--link">Provide Funds</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {{> testimonial}}
+
+  <!-- ═══ Final CTA — "Ready to move forward" (home-specific) ══ -->
+  <section class="final-vault" aria-labelledby="final-cta-heading">
+    <div class="container">
+      <div class="final-vault__inner">
+        <span class="final-vault__eyebrow">The next move</span>
+        <h2 id="final-cta-heading">Ready to <span class="hl">move forward</span></h2>
+        <p>Let's discuss your scenario and explore what's possible together.</p>
+        <div class="final-vault__ctas">
+          <a href="/get-capital" class="btn btn--primary">Get Started</a>
+          <a href="/contact" class="btn btn--secondary">Speak with our team</a>
+        </div>
+      </div>
+    </div>
+    <div class="final-vault__hero" aria-hidden="true">
+      <img src="../../Image%20Assets/John_Capital%20Unique_Footer_Pressure.jpeg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  {{> footer}}
+
+</body>
+</html>

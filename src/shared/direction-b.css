@@ -489,6 +489,7 @@ body {
 .pathway::before {
   content: "";
   position: absolute; inset: 0; z-index: -2;
+  background-image: var(--pathway-img);   /* set per-card via inline style="--pathway-img: url(...)" */
   background-size: cover; background-position: center;
   transition: transform 800ms var(--easing-standard);
 }
