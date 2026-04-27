@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Construction Capital — Capital Unique</title>
+  <meta name="description" content="Construction capital for active projects. Staged funding aligned to your build timeline, draws, and delivery risk.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="../src/shared/tokens.css">
+  <link rel="stylesheet" href="../src/shared/direction-b.css">
+</head>
+<body>
+
+  {{> navbar}}
+
+  <section class="hero-vault" aria-labelledby="hero-heading">
+    <div class="container hero-vault__inner" style="padding-block: clamp(96px, 14vw, 180px);">
+      <span class="hero-vault__eyebrow">Construction</span>
+      <h1 id="hero-heading">Construction capital for <span class="hl">active</span> projects</h1>
+      <p class="hero-vault__lead">Staged funding aligned to your build timeline, draws, and delivery risk.</p>
+      <div class="hero-vault__ctas">
+        <a href="/charles-ai" class="btn btn--primary">Start with Charles A.I</a>
+        <a href="/contact" class="btn btn--secondary">Speak with our team</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-vault" aria-labelledby="def-heading" style="background: var(--bg-dark);">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Fundamentals</span>
+        <h2 id="def-heading">Construction capital is <span class="hl">staged</span>, not fixed</h2>
+        <p>Unlike traditional lending, construction capital moves with your project. Funds release in draws aligned to completion milestones, cost verification, and delivery risk—not approval formulas or credit scores alone. This is how active builds actually get funded.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach-vault" aria-labelledby="projects-heading" style="background: var(--bg-dark-alt);">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Projects</span>
+        <h2 id="projects-heading">Construction projects we <span class="hl">fund</span></h2>
+        <p>These are the builds we see most often. If your project sits here, we understand the timing, the risks, and the structure it needs.</p>
+      </div>
+      <div class="approach-vault__grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); grid-template-areas: none;">
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Meeting_Sign.png" alt="Construction project placeholder"></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">[Type]</span>
+            <h3>[Residential development]</h3>
+            <p>[Project type and structure summary — pending.]</p>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Review_Documents.png" alt="Construction project placeholder"></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">[Type]</span>
+            <h3>[Commercial fitout]</h3>
+            <p>[Project type and structure summary — pending.]</p>
+          </div>
+        </article>
+        <article class="vcard">
+          <div class="vcard__img"><img src="../../Image%20Assets/John_Capital%20Unique_Hand_Shake.jpeg" alt="Construction project placeholder"></div>
+          <div class="vcard__body">
+            <span class="vcard__eyebrow">[Type]</span>
+            <h3>[Multi-stage subdivision]</h3>
+            <p>[Project type and structure summary — pending.]</p>
+          </div>
+        </article>
+      </div>
+      <p class="pending-strip" style="margin-top: var(--space-6);">
+        <strong>Awaiting content:</strong> Project type categories not detailed in source. Confirm 3–4 categories with client.
+      </p>
+    </div>
+  </section>
+
+  <section class="approach-vault" aria-labelledby="approach-heading">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Approach</span>
+        <h2 id="approach-heading">How we assess construction <span class="hl">capital</span></h2>
+        <p>We don't use formulas. We assess reality. The build. The timing. The risk. This is what guides every decision.</p>
+      </div>
+      <div class="approach-vault__grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); grid-template-areas: none;">
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow">Schedule</span><h3>Project</h3><p>We structure around your build schedule. The program comes first. Price comes later.</p></article>
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow">Releases</span><h3>Draws</h3><p>Capital releases follow progress. Milestones verified. Costs checked. Money moves when work is done.</p></article>
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow">Risk</span><h3>Risk</h3><p>Risk is assessed before capital is committed. Delivery risk. Market risk. Execution risk. No surprises mid-build.</p></article>
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow">People</span><h3>Judgement</h3><p>Decisions are made by people. Not models. Not algorithms. Construction experience matters.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    NOTE: Step 01 + Step 02 bodies preserve agriculture-bleed copy ("seasonal patterns",
+    "farm structure") per content/construction.md. User will fix copy directly.
+    Tracked in docs/copy-gaps.md.
+  -->
+  <section class="process-vault" aria-labelledby="process-heading">
+    <div class="container process-vault__inner">
+      <div class="process-vault__intro">
+        <span class="eyebrow">The Process</span>
+        <h2 id="process-heading">How construction <span class="hl">capital</span> moves</h2>
+        <p>No unnecessary steps. No wasted time.</p>
+      </div>
+      <ol class="process-vault__steps">
+        <li class="vstep"><span class="vstep__num">01</span><h3 class="vstep__title"><span class="hl">Listen</span></h3><p class="vstep__body">We listen and understand your operation, seasonal patterns, asset position, and what capital needs to achieve.</p></li>
+        <li class="vstep"><span class="vstep__num">02</span><h3 class="vstep__title">Assess</h3><p class="vstep__body">We evaluate how capital can work within your farm structure, cashflow timing, and any regulatory or operational constraints.</p></li>
+        <li class="vstep"><span class="vstep__num">03</span><h3 class="vstep__title">Confirm</h3><p class="vstep__body">Once structure is clear, we confirm how the capital will be accessed, repaid, and what protections are in place.</p></li>
+        <li class="vstep"><span class="vstep__num">04</span><h3 class="vstep__title">Move</h3><p class="vstep__body">Capital is deployed when terms are agreed and documentation is complete, with no unnecessary delays.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="approach-vault" aria-labelledby="fit-heading" style="background: var(--bg-dark-alt);">
+    <div class="container">
+      <div class="approach-vault__head">
+        <span class="eyebrow">Fit</span>
+        <h2 id="fit-heading">Who this works for and who it <span class="hl">doesn't</span></h2>
+        <p>Construction capital suits real projects with real timelines. It does not suit speculation or rate-first conversations.</p>
+      </div>
+      <div class="approach-vault__grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); grid-template-areas: none;">
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow" style="color: oklch(70% 0.18 145);">Builders ✓</span><h3>Builders</h3><p>Live projects. Signed contracts. Draw schedules tied to progress. Delivery matters more than rates.</p></article>
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow" style="color: oklch(70% 0.18 145);">Developers ✓</span><h3>Developers</h3><p>Multi-stage builds. Complex capital stacks. Timing risk. Exit and refinance planning built in.</p></article>
+        <article class="vcard vcard--icon"><span class="vcard__eyebrow" style="color: oklch(60% 0.20 25);">Not suited ✗</span><h3>Not suited for you</h3><p>Home loans. Pre-approvals. Rate-first enquiries. Ideas without execution.</p></article>
+      </div>
+    </div>
+  </section>
+
+  {{> cta-charles-ai}}
+
+  {{> footer}}
+
+</body>
+</html>
