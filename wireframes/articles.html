@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Articles — Capital Unique</title>
+  <meta name="description" content="Thoughtful perspectives on private finance, non-bank lending, and capital strategy—written to help you understand your options and make informed decisions.">
+  <link rel="stylesheet" href="../src/shared/wireframe.css">
+</head>
+<body>
+
+<dl class="wf-meta">
+  <div class="wf-meta-row"><dt>Slug:</dt><dd>/articles</dd><dt>Relume folder:</dt><dd>articles/</dd><dt>Status:</dt><dd>Wireframe (article bodies pending — to be authored in GHL blog)</dd></div>
+  <div class="wf-meta-row"><dt>Phase:</dt><dd>1 — Wireframe</dd><dt>Source:</dt><dd>relume-source/articles/index.jsx + content/articles.md</dd></div>
+</dl>
+
+<header class="wf-header" data-component="Navbar13" data-partial="navbar" role="banner">
+  <a href="#" aria-label="Capital Unique — home">[Logo: Capital Unique wordmark]</a>
+  <nav aria-label="Primary">
+    <ul class="wf-nav-list">
+      <li>
+        Capital
+        <ul>
+          <li><a href="#">Borrow</a></li>
+          <li><a href="#">Fund</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Waitlist</a></li>
+      <li>
+        Insights &amp; Resources
+        <ul>
+          <li><a href="#">Free Guides</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Calculators</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Charles A.I</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  <ul class="wf-ctas">
+    <li><a href="#">Login</a></li>
+  </ul>
+</header>
+
+<main>
+
+  <section data-component="Header77" aria-label="Hero">
+    <h1>Clear Thinking for Unique Capital.</h1>
+    <p>Thoughtful perspectives on private finance, non-bank lending, and capital strategy—written to help you understand your options and make informed decisions.</p>
+    <ul class="wf-ctas">
+      <li class="primary"><a href="#">Subscribe</a></li>
+    </ul>
+    <div data-image="hero-image-marquee" data-aspect="horizontal marquee, each tile 4:3">
+      <span class="wf-prompt">Auto-scrolling horizontal image marquee (~6 tiles, two rows). Editorial photography on private finance / capital decisions — workspace details, market scenes, considered portraits. Australian context, sophisticated finance aesthetic. Real photography only. Phase 4: confirm whether to keep the marquee motion or replace with a static editorial collage.</span>
+    </div>
+  </section>
+
+  <section data-component="Logo3" data-partial="logo-strip" aria-label="Trusted by">
+    <h2>Trusted by Australia's most discerning investors</h2>
+    <div data-image="trust-logos" data-aspect="logo-strip">
+      <span class="wf-prompt">Horizontal-scrolling logo strip (~8 logos). Awaiting real partner / publication logos. Until then: keep as placeholder. Tracked in docs/copy-gaps.md.</span>
+    </div>
+  </section>
+
+  <section data-component="BlogPostHeader1" data-status="extra-from-copy" aria-label="Featured article header">
+    <nav aria-label="Breadcrumb">
+      <ol class="wf-nav-list">
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Finance</a></li>
+      </ol>
+    </nav>
+    <h2>Navigating capital in complex scenarios</h2>
+    <p>Stay informed on private finance.</p>
+    <div>
+      <div data-image="author-avatar" data-aspect="1:1 circular, 56px">
+        <span class="wf-prompt">Author avatar (Capital Unique brand mark or editorial portrait). 56px circular crop.</span>
+      </div>
+      <p><strong>Capital Unique</strong></p>
+      <p><small>[Date] · [Read time]</small></p>
+    </div>
+    <ul class="wf-nav-list" aria-label="Share">
+      <li><a href="#">Copy link</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">X (Twitter)</a></li>
+      <li><a href="#">Facebook</a></li>
+    </ul>
+    <div data-image="featured-article-hero" data-aspect="2:1 wide editorial">
+      <span class="wf-prompt">Wide editorial photograph for the featured article — capital, market, or considered scene. Australian context, sophisticated finance aesthetic. Real photography only.</span>
+    </div>
+    <p class="wf-note"><strong>Phase 2:</strong> BlogPostHeader1 in <code>relume-source/articles/index.jsx</code> renders a single-article header inside the index/listing page. Articles will be authored in GHL's blog later, so this single-post header pattern likely belongs on a dedicated <code>/articles/[slug]</code> template — confirm whether to remove it from the index, repurpose it as a "Featured article" hero, or keep as a wireframe placeholder for the future article-detail template.</p>
+  </section>
+
+  <section data-component="Cta58" data-partial="cta-charles-ai" aria-label="Stay informed on private finance">
+    <h2>Stay informed on private finance</h2>
+    <p>Receive insights on capital strategy, lending trends, and complex scenarios.</p>
+    <form>
+      <label for="newsletter-email">Email</label>
+      <input id="newsletter-email" type="email" placeholder="Enter your email" disabled>
+      <button type="submit" disabled>Subscribe</button>
+    </form>
+    <p><small>We respect your inbox. Unsubscribe anytime from our communications.</small></p>
+    <p class="wf-note"><strong>Phase 2:</strong> Cta58 here is a newsletter capture, not a Charles A.I CTA — keeping <code>data-partial="cta-charles-ai"</code> off would be more accurate. Tagged here for visibility; remove the partial flag if it stays a newsletter form.</p>
+  </section>
+
+  <section data-component="Blog34" aria-label="Thought on capital">
+    <p><strong>Insights</strong></p>
+    <h2>Thought on capital</h2>
+    <p>Clear perspectives on private finance and complex lending scenarios.</p>
+    <ul class="wf-cards" data-status="awaiting-content" aria-label="Article cards (article bodies pending — to be authored in GHL blog)">
+      <li>
+        <div data-image="article-banks-say-no" data-aspect="3:2">
+          <span class="wf-prompt">Editorial photograph evoking alternative paths or quiet rejection — empty bank facade, stillness, or contrasting scene. Australian context, sophisticated finance aesthetic. Real photography only.</span>
+        </div>
+        <p><strong>Lending</strong> · 7 min read</p>
+        <h3>When banks say no, alternatives emerge</h3>
+        <p>Understanding non-conforming lending and when it makes sense.</p>
+        <ul class="wf-ctas"><li><a href="#">Read more →</a></li></ul>
+      </li>
+      <li>
+        <div data-image="article-development-structuring" data-aspect="3:2">
+          <span class="wf-prompt">Editorial photograph of a development project — site, plans, structured architecture. Australian context, sophisticated finance aesthetic. Real photography only.</span>
+        </div>
+        <p><strong>Strategy</strong> · 6 min read</p>
+        <h3>Structuring capital for development projects</h3>
+        <p>How developers navigate complex financing across multiple stages.</p>
+        <ul class="wf-ctas"><li><a href="#">Read more →</a></li></ul>
+      </li>
+      <li>
+        <div data-image="article-portfolio-diversification" data-aspect="3:2">
+          <span class="wf-prompt">Editorial photograph evoking portfolio thinking — desk with multiple documents, considered investor scene. Australian context, sophisticated finance aesthetic. Real photography only.</span>
+        </div>
+        <p><strong>Investing</strong> · 5 min read</p>
+        <h3>Private capital and portfolio diversification</h3>
+        <p>Why sophisticated investors consider structured lending opportunities.</p>
+        <ul class="wf-ctas"><li><a href="#">Read more →</a></li></ul>
+      </li>
+    </ul>
+    <ul class="wf-ctas"><li><a href="#">View all</a></li></ul>
+  </section>
+
+</main>
+
+<footer class="wf-footer" data-component="Footer10" data-partial="footer" role="contentinfo">
+  <a href="#" aria-label="Capital Unique — home">[Logo: Capital Unique wordmark]</a>
+  <div class="wf-footer-cols">
+    <div>
+      <h3>Capital</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">Borrow Capital</a></li>
+        <li><a href="#">Fund Capital</a></li>
+        <li><a href="#">Subscribe</a></li>
+        <li><a href="#">Account Login</a></li>
+        <li><a href="#">Waitlist</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Insights &amp; Resources</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Calculators</a></li>
+        <li><a href="#">Charles A.I</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Connect</h3>
+      <ul class="wf-nav-list">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Join Investors Network</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Stay informed</h3>
+      <p>Receive insights on private finance, market shifts, and Capital Unique updates.</p>
+      <form>
+        <label for="footer-email">Email</label>
+        <input id="footer-email" type="email" placeholder="Your email address" disabled>
+        <button type="submit" disabled>Join</button>
+      </form>
+      <p><small>By subscribing you agree to our Privacy Policy.</small></p>
+    </div>
+  </div>
+  <hr>
+  <p><small>© [Year] Capital Unique. All rights reserved.</small></p>
+  <ul class="wf-nav-list" aria-label="Social">
+    <li><a href="#">Facebook</a></li>
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">X (Twitter)</a></li>
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">YouTube</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
